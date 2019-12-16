@@ -1,0 +1,27 @@
+{
+  "name": "WebAPK Google Pay 2.0 Test",
+  "short_name": "WebAPK",
+  "start_url": "/pr/webapk/",
+  "scope": "/pr/webapk/",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white",
+  "android_package_name": "io.github.rsolomakhin.pr.webapk",
+  "icons": [{
+    "src": "icon512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
+    "src": "icon192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "icon144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }],
+  "serviceworker": {
+    "src": "webapk-app.js",
+    "scope": "/pr/webapk/"
+  }
+}

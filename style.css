@@ -1,0 +1,43 @@
+body {
+  background: white;
+  color: black;
+}
+
+a:link {
+  color: #185ABC;
+}
+
+a:hover {
+  color: #185ABC;
+}
+
+a:active {
+  color: #185ABC;
+}
+
+a:visited {
+  color: #4527A0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: #E0E0E0;
+  }
+
+  a:link {
+    color: #8AB4F8;
+  }
+
+  a:hover {
+    color: #8AB4F8;
+  }
+
+  a:active {
+    color: #8AB4F8;
+  }
+
+  a:visited {
+    color: #9575CD;
+  }
+}

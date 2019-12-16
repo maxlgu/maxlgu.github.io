@@ -1,0 +1,8 @@
+{
+    "name": "Bob Pay",
+    "icons": [{
+        "src": "bobpay-logo.png",
+        "sizes": "207x207",
+        "type": "image/png"
+    }]
+}
