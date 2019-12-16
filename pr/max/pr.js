@@ -14,8 +14,6 @@ function buildPaymentRequest() {
   }, {
     supportedMethods: 'https://maxlgu.github.io/pr/apps/max'
   }, {
-    supportedMethods: 'http://127.0.0.1:21655/pr/apps/max/'
-  }, {
     supportedMethods: 'basic-card'
   }
   ];
