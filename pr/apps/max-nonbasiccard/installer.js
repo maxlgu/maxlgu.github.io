@@ -75,12 +75,6 @@ function check() {
             registration.paymentManager.instruments
               .get('instrument-key')
               .then(instrument => {
-                document.getElementById('method').innerHTML =
-                  instrument.enabledMethods || instrument.method;
-                document.getElementById('network').innerHTML =
-                  instrument.capabilities.supportedNetworks;
-                document.getElementById('type').innerHTML =
-                  instrument.capabilities.supportedTypes;
                 hideElement('checking');
                 showElement('installed');
               })
@@ -134,12 +128,6 @@ function install() {
             .get('instrument-key')
             .then(instrument => {
               document.getElementById('scope').innerHTML = registration.scope;
-              document.getElementById('method').innerHTML =
-                instrument.enabledMethods || instrument.method;
-              document.getElementById('network').innerHTML =
-                instrument.capabilities.supportedNetworks;
-              document.getElementById('type').innerHTML =
-                instrument.capabilities.supportedTypes;
               hideElement('installing');
               showElement('installed');
             })
