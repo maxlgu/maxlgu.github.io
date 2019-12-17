@@ -5,7 +5,7 @@ self.addEventListener('paymentrequest', evt => {
     const promise = evt.openWindow(urlDifferentOrigin);
     if (!promise) {
       console.log("failed to openWindow");
-      resolve("Failed to openWindow");
+      reject("Failed to openWindow");
     }
   }));
 });
