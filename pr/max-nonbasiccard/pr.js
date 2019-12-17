@@ -7,8 +7,8 @@ function buildPaymentRequest() {
     return null;
   }
 
-  const supportedInstruments = [ ]{
-    supportedMethods: 'https://maxlgu.github.io/max-payment-method/payment-manifest.json'
+  const supportedInstruments = [{
+    supportedMethods: ['https://maxlgu.github.io/max-payment-method/payment-manifest.json']
   }
   ];
 
