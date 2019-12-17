@@ -1,7 +1,7 @@
 const urlDifferentOrigin = "https://asdfasdfasdfs";
 
 self.addEventListener('paymentrequest', evt => {
-  evt.respondWith(new Promise((resolve) => {
+  evt.respondWith(new Promise((resolve, reject) => {
     const promise = evt.openWindow(urlDifferentOrigin);
     if (!promise) {
       console.log("failed to openWindow");
