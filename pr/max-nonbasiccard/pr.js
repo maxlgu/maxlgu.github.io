@@ -8,7 +8,7 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: ['https://skilful-reserve-239412.appspot.com']
+    supportedMethods: ['https://maxlgu.github.io/max-payment-method/payment-manifest.json']
   }
   ];
 
