@@ -1,8 +1,0 @@
-{
-    "short_name": "Mixed Images",
-    "name": "Mixed Content Images: Insecure",
-    "icons": [{
-        "src": "bobpay-logo.png",
-        "sizes": "any"
-    }]
-}

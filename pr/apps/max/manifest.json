@@ -1,8 +1,0 @@
-{
-    "name": "Max's Payment Handler",
-    "icons": [{
-        "src": "dog.png",
-        "sizes": "600x600",
-        "type": "image/png"
-    }]
-}
