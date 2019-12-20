@@ -121,7 +121,7 @@ function install() {
         .set("instrument-key", {
           // Chrome uses name and icon from the web app manifest
           name: "Max's Non-basic-card Payment Handler Instrument",
-          method: 'https://skilful-reserve-239412.appspot.com/',
+          method: 'https://skilful-reserve-239412.appspot.com/method-manifest',
         })
         .then(() => {
           registration.paymentManager.instruments
