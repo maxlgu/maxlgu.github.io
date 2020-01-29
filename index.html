@@ -41,6 +41,15 @@
     <li><a href="autofill/">Autofill Smoke Test</a></li>
   </ul>
   <script src="/redirect.js"></script>
+  <div>
+    <div>Debug Info:</div>
+    <div id="version"></div>
+  </div>
+  <script>
+    window.addEventListener('load', (event) => {
+      document.getElementById('version').innerText = navigator.userAgent;
+    });
+  </script>
 </body>
 
 </html>
