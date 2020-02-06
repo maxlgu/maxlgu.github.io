@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+Copyright 2020 The Chromium Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+-->
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<title>Max Pay test</title>
+<body>
+  <button onclick="confirm()">confirm</button>
+  <button onclick="cancel()">cancel</button>
+  <button onclick="fail()">fail</button>
+  <button onclick="abort()">abort</button>
+  <button onclick="loadInsecureContent()">load insecure content</button>
+  <div id="image_container"></div>
+  <div>Messages:</div>
+  <pre id="log"></pre>
+</body>
+
+<script>
+let window_client_ready = false;
+
+/**
+ * Insert a message to the widget called 'log'.
+ * @param {string} text - the text that is intended to be inserted
+ * into the log.
+ */
+function updateLogView(text) {
+  const messageElement = document.getElementById('log');
+  messageElement.innerText = text + '\n' + messageElement.innerText;
+}
+
+function confirm() {
+  navigator.serviceWorker.controller.postMessage('confirm');
+  updateLogView('confirm is invoked.');
+  return 'confirmed';
+}
+
+function fail() {
+  navigator.serviceWorker.controller.postMessage('fail');
+  updateLogView('fail is invoked.');
+  return 'failed';
+}
+
+function abort() {
+  navigator.serviceWorker.controller.postMessage('abort');
+  updateLogView('abort is invoked.');
+  return 'aborted';
+}
+
+function cancel() {
+  navigator.serviceWorker.controller.postMessage('cancel');
+  updateLogView('cancel is invoked.');
+  return 'canceled';
+}
+
+function loadInsecureContent(url = 'http://www.w3schools.com/tags/smiley.gif') {
+  let img = document.createElement('img');
+  img.src = url;
+  img.setAttribute('height', '100px');
+  img.setAttribute('width', '100px');
+  let container = document.getElementById('image_container');
+  container.appendChild(img);
+  let caption = document.createElement('div');
+  caption.innerText = 'If you can see the above image without enabling the flag "--ignore-certificate-errors", please files a bug with crbug.com/new under UI>Browser>Payments.';
+  container.appendChild(caption);
+  updateLogView('load insecure content: ' + url);
+  return 'load_insecure_content';
+}
+
+function isWindowClientReady() {
+  return window_client_ready;
+}
+
+window.onload = function() {
+  navigator.serviceWorker.controller.postMessage('app_is_ready');
+  updateLogView('app is ready.');
+}
+
+navigator.serviceWorker.addEventListener('message', (evt) => {
+  if (!evt.data) {
+    updateLogView('Received an empty message.');
+    return;
+  }
+
+  if (evt.data === 'window_client_ready') {
+    window_client_ready = true;
+  }
+  updateLogView(evt.data);
+});
+</script>
