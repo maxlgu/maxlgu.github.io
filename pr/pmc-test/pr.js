@@ -131,7 +131,7 @@ function buildExceptionPaymentRequest() {
   if (request.onpaymentmethodchange !== undefined) {
     request.addEventListener('paymentmethodchange', (evt) => {
       evt.updateWith(new Promise(() => {
-        throw new Error('Error for test');
+        throw new Error('Merchant throws an exception.');
       }););
     });
   }
