@@ -24,35 +24,35 @@ async function checkHasEnrolledInstrument(request) {
   }
 }
 
+const supportedInstruments = [{
+  supportedMethods: 'https://skilful-reserve-239412.appspot.com/static/apps/pmc',
+}];
+
+const details = {
+  total: {
+    label: 'Payment',
+    amount: {
+      currency: 'USD',
+      value: '0.99',
+    },
+  },
+};
+
+const globalDetails = {
+  total: {
+    label: 'Donation',
+    amount: {
+      currency: 'EUR',
+      value: '1.11',
+    },
+  },
+};
+
 function buildPaymentRequest() {
   if (!window.PaymentRequest) {
     error('PaymentRequest API is not supported.');
     return null;
   }
-
-  const supportedInstruments = [{
-    supportedMethods: 'https://skilful-reserve-239412.appspot.com/static/apps/pmc',
-  }];
-
-  const details = {
-    total: {
-      label: 'Payment',
-      amount: {
-        currency: 'USD',
-        value: '0.99',
-      },
-    },
-  };
-
-  const globalDetails = {
-    total: {
-      label: 'Donation',
-      amount: {
-        currency: 'EUR',
-        value: '1.11',
-      },
-    },
-  };
 
   let request = null;
 
@@ -83,7 +83,35 @@ function buildPaymentRequest() {
   return request;
 }
 
-let request = buildPaymentRequest();
+function buildRejectPaymentRequest() {
+  if (!window.PaymentRequest) {
+    error('PaymentRequest API is not supported.');
+    return null;
+  }
+
+  let request = null;
+
+  try {
+    request = new PaymentRequest(supportedInstruments, details);
+  } catch (e) {
+    error('Payment request: ' + e.toString());
+    return null;
+  }
+
+
+  if (request.onpaymentmethodchange !== undefined) {
+    request.addEventListener('paymentmethodchange', (evt) => {
+      evt.updateWith(Promise.reject('Merchant reject the paymentmethodchange event.'));
+    });
+  }
+
+  checkCanMakePayment(request);
+  checkHasEnrolledInstrument(request);
+
+  return request;
+}
+
+let request = null;
 
 async function onBuyClicked() { // eslint-disable-line no-unused-vars
   if (!request) {
