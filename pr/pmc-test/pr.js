@@ -90,8 +90,6 @@ async function onBuyClicked() { // eslint-disable-line no-unused-vars
     return;
   }
 
-  clearAllMessages();
-
   try {
     const instrumentResponse = await request.show()
     await instrumentResponse.complete('success');
