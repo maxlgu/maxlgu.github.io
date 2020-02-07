@@ -111,10 +111,42 @@ function buildRejectPaymentRequest() {
   return request;
 }
 
+
+function buildExceptionPaymentRequest() {
+  if (!window.PaymentRequest) {
+    error('PaymentRequest API is not supported.');
+    return null;
+  }
+
+  request = null;
+
+  try {
+    request = new PaymentRequest(supportedInstruments, details);
+  } catch (e) {
+    error('Payment request: ' + e.toString());
+    return null;
+  }
+
+
+  if (request.onpaymentmethodchange !== undefined) {
+    request.addEventListener('paymentmethodchange', (evt) => {
+      evt.updateWith(new Promise(() => {
+        throw new Error('Error for test');
+      }););
+    });
+  }
+
+  checkCanMakePayment(request);
+  checkHasEnrolledInstrument(request);
+
+  return request;
+}
+
 let request = null;
 
 async function onBuyClicked() { // eslint-disable-line no-unused-vars
   if (!request) {
+    error('please build payment request first.');
     return;
   }
 
