@@ -132,7 +132,7 @@ function buildExceptionPaymentRequest() {
     request.addEventListener('paymentmethodchange', (evt) => {
       evt.updateWith(new Promise(() => {
         throw new Error('Merchant throws an exception.');
-      }););
+      }));
     });
   }
 
