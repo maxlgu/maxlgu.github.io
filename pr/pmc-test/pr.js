@@ -31,7 +31,7 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://maxlgu.github.io/pr/apps/pmc',
+    supportedMethods: 'https://skilful-reserve-239412.appspot.com/static/apps/pmc',
   }];
 
   const details = {
