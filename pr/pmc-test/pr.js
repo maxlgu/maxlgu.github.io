@@ -54,7 +54,7 @@ function buildPaymentRequest() {
     return null;
   }
 
-  let request = null;
+  request = null;
 
   try {
     request = new PaymentRequest(supportedInstruments, details);
@@ -89,7 +89,7 @@ function buildRejectPaymentRequest() {
     return null;
   }
 
-  let request = null;
+  request = null;
 
   try {
     request = new PaymentRequest(supportedInstruments, details);
