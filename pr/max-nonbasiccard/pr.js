@@ -99,6 +99,14 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
 }
 
 function navigateAwayIn10s() {
+  info("navigate away in 10s.");
+  setTimeout(() => {
+    window.location.href = 'https://maxlgu.github.io';
+  }, 10000);
+}
+
+function changeWindowIn10s() {
+  info("change window in 10s.");
   setTimeout(() => {
     window.location.href = 'https://maxlgu.github.io';
   }, 10000);
