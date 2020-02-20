@@ -97,3 +97,9 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
+
+function navigateAwayIn10s() {
+  setTimeout(() => {
+    window.location.href = 'https://maxlgu.github.io';
+  }, 10000);
+}
