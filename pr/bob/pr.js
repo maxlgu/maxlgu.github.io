@@ -8,10 +8,7 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://bobpay.xyz/pay'
-  },
-  {
-    supportedMethods: 'interledger'
+    supportedMethods: 'https://skilful-reserve-239412.appspot.com/method-manifest'
   }
   ];
 
