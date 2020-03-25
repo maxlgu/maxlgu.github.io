@@ -1,8 +1,8 @@
 {
-    "name": "MaxPay",
+    "name": "LindaPay",
     "icons": [{
-        "src": "dog.png",
-        "sizes": "600x600",
-        "type": "image/png"
+        "src": "lindapay.jpg",
+        "sizes": "532x532",
+        "type": "image/jpg"
     }]
 }

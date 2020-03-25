@@ -120,8 +120,8 @@ function install() {
       registration.paymentManager.instruments
         .set("instrument-key", {
           // Chrome uses name and icon from the web app manifest
-          name: "Max's Non-basic-card Payment Handler Instrument",
-          method: 'https://skilful-reserve-239412.appspot.com/method-manifest',
+          name: "Linda Pay",
+          method: 'https://maxlgu.github.io/lindapay-manifest/paymentmanifest.json',
         })
         .then(() => {
           registration.paymentManager.instruments
