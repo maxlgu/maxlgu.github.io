@@ -8,13 +8,9 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://bobpay.xyz/pay'
+    supportedMethods: 'https://play.google.com/billing'
   }, {
-    supportedMethods: 'https://rsolomakhin.github.io/pr/apps/src2'
-  }, {
-    supportedMethods: 'https://maxlgu.github.io/pr/apps/max'
-  }, {
-    supportedMethods: 'basic-card'
+    supportedMethods: 'https://skilful-reserve-239412.appspot.com/method-manifest'
   }
   ];
 
