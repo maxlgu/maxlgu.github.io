@@ -2,17 +2,14 @@
  * Initializes the payment request object.
  * @return {PaymentRequest} The payment request object.
  */
-function buildPaymentRequest() {
+function buildPayRequest(method) {
   if (!window.PaymentRequest) {
     return null;
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://play.google.com/billing'
-  }, {
-    supportedMethods: 'https://skilful-reserve-239412.appspot.com/method-manifest'
-  }
-  ];
+    supportedMethods: method
+  }];
 
   const details = {
     total: {
@@ -62,7 +59,7 @@ function buildPaymentRequest() {
   return request;
 }
 
-let request = buildPaymentRequest();
+let request = buildPayRequest();
 
 /**
  * Handles the response from PaymentRequest.show().
@@ -74,14 +71,25 @@ function handlePaymentResponse(response) {
       })
       .catch(function(err) {
         error(err);
-        request = buildPaymentRequest();
       });
 }
 
 /**
- * Launches payment request for Bob Pay.
+ * Launches payment request for Max Pay.
  */
-function onBuyClicked() { // eslint-disable-line no-unused-vars
+function onMaxPayClicked() { // eslint-disable-line no-unused-vars
+  onPayClicked("https://skilful-reserve-239412.appspot.com/method-manifest");
+}
+
+/**
+ * Launches payment request for Play Store Billing.
+ */
+function onPlayStoreBillingClicked() { // eslint-disable-line no-unused-vars
+  onPayClicked("https://play.google.com/billing");
+}
+
+function onPayClicked(method) { // eslint-disable-line no-unused-vars
+  request = buildPayRequest(method);
   if (!window.PaymentRequest || !request) {
     error('PaymentRequest API is not supported.');
     return;
@@ -92,10 +100,10 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
       .then(handlePaymentResponse)
       .catch(function(err) {
         error(err);
-        request = buildPaymentRequest();
+        request = buildPayRequest(method);
       });
   } catch (e) {
     error('Developer mistake: \'' + e.message + '\'');
-    request = buildPaymentRequest();
+    request = buildPayRequest(method);
   }
 }
