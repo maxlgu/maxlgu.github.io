@@ -9,6 +9,7 @@
       font-family: lindaFont;
       src: url("https://cdn.glitch.com/0cc93a92-bd42-463b-b61f-f5c4e1818234%2FKaushanScript-Regular.ttf?v=1585789114667");
     }
+    
     body {
       text-align: center;
     }
@@ -16,21 +17,28 @@
     #title {
       font-size: 10vw;
       font-family: lindaFont;
-      text-align: center;
+
       height: 10vh;
+      margin-top: 10vh;
     }
     
     #total {
-      margin: 5vw;
+      margin-top: 20vw;
     }
     
     #debug {
-      margin-top: 10vw
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: black;
+      border-style: dotted;
+      height: 40vw;
     }
     
     #msg {
-      border-style: dotted;
-      height: 30vw;
+      overflow-y: scroll;
+      height:100%;
     }
 
     #maxPay {
@@ -38,7 +46,6 @@
       border: none;
       color: white;
       padding: 15px 32px;
-      text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
@@ -46,7 +53,7 @@
     
     #storeBilling {
       margin: 5px;
-      background-color: #6ea9b5; /* Green */
+      background-color: #6ea9b5;
       border: none;
       color: white;
       padding: 15px 32px;
@@ -67,6 +74,7 @@
       <button id="maxPay" onclick="onMaxPayClicked()">MaxPay</button>
       <button id="storeBilling" onclick="onPlayStoreBillingClicked()">Play Store Billing</button>
      </div>
+
     <div id="debug">
       <div>Debug</div>
       <pre id="msg"></pre>
