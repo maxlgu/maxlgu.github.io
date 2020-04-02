@@ -59,8 +59,6 @@ function buildPayRequest(method) {
   return request;
 }
 
-let request = buildPayRequest();
-
 /**
  * Handles the response from PaymentRequest.show().
  */
@@ -89,7 +87,7 @@ function onPlayStoreBillingClicked() { // eslint-disable-line no-unused-vars
 }
 
 function onPayClicked(method) { // eslint-disable-line no-unused-vars
-  request = buildPayRequest(method);
+  let request = buildPayRequest(method);
   if (!window.PaymentRequest || !request) {
     error('PaymentRequest API is not supported.');
     return;
