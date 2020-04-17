@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linda's Bakery TWA</title>
+  <style>  
+    @font-face {
+      font-family: lindaFont;
+      src: url("https://cdn.glitch.com/0cc93a92-bd42-463b-b61f-f5c4e1818234%2FKaushanScript-Regular.ttf?v=1585789114667");
+    }
+    
+    body {
+      text-align: center;
+    }
+    
+    #title {
+      font-size: 10vw;
+      font-family: lindaFont;
+
+      height: 10vh;
+      margin-top: 10vh;
+    }
+    
+    #total {
+      margin-top: 20vw;
+    }
+    
+    #debug {
+      position: fixed;
+      text-align: left;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: black;
+      border-style: dotted;
+      height: 40vw;
+    }
+    
+    #msg {
+      overflow-y: scroll;
+      height:100%;
+    }
+
+    #maxPay {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    
+    #storeBilling {
+      margin: 5px;
+      background-color: #6ea9b5;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    
+  </style>
+</head>
+<body>
+    <div id="title">Linda's Bakery</div>
+    <div id="explanation">This merchant sends a payment request that contains only the play-billing method:</div>
+    <pre>new PaymentRequest([{supportedMethods: 'https://play.google.com/billing', data: {sku: 'test-sku'}}]);</pre>
+    <div id="total">Price: USD <strong>$55.00</strong></div>
+    <div> 
+    </div>
+    <div>
+      <button id="maxPay" onclick="onMaxPayClicked()">MaxPay</button>
+      <button id="storeBilling" onclick="onPlayStoreBillingClicked()">Play Store Billing</button>
+     </div>
+
+    <div id="debug">
+      <div><span>Links: </span><a href="https://skilful-reserve-239412.appspot.com/static/">Install MaxPay</a></div>
+      <div>LogDog:</div>
+      <pre id="msg"></pre>
+    </div>
+</body>
+<script src="./pr.js"></script>
+<script src="../util.js"></script>
+</html>
