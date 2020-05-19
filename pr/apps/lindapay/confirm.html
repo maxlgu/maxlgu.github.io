@@ -22,13 +22,54 @@
     <div>Upload: <input type=”file”></div>
 </div>
 <div>
-    <img src="lindapay.jpg" alt="The Secret Life of Pet">
-    <div id="image_container"></div>
-</div>
-<div>
     <button onclick="navigator.serviceWorker.controller.postMessage('confirm')">Confirm</button>
     <button onclick="navigator.serviceWorker.controller.postMessage('reject')">Reject</button>
     <button onclick="navigator.serviceWorker.controller.postMessage('cancel')">Cancel</button>
     <button onclick="window.close()">Close Window</button>
 </div>
+
+<div>
+    <div><button onclick="window.location.href = document.getElementById('urlToGo').value;">Go!</button>
+        <span>Navigate to URL: <input type="text" id="urlToGo" value="https://www.google.com"></span></div>
+</div>
+<div>
+    <div>
+        <div>Chrome Implementation: <a href="https://cs.chromium.org/chromium/src/chrome/android/java/src/org/chromium/chrome/browser/payments/handler/PaymentHandlerCoordinator.java">PaymentHandler</a></div>
+        <div>Links for tests: 
+            <ul>
+                <li><span>Download: <a href="./dog.png" download>a lovely dog</a></span></li>
+                <li><span>a http link: <a href="http://info.cern.ch/">http://info.cern.ch/</a></span></li>
+                <li><span>a https PWA link: <a href="https://www.flipkart.com/">https://www.flipkart.com/</a></span></li>
+                <li><span>a http link opened in new "target" (tab or window):
+                    <a href="http://info.cern.ch/"  target="_blank">http://info.cern.ch/</a></span></li>
+                <li><span>an external https link: <a href="https://www.baidu.com/">http://www.baidu.com/</a></span></li>
+                <li><span>WebAuthn: </span><a href="https://webauthn.io/">https://webauthn.io/</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>========== Iframe ======================</div>
+<div>
+    <div><button onclick="iframeRedirection(document.getElementById('iframeUrlToGo').value)">Iframe redirect!</button>
+        <span>Navigate to URL: <input type="text" id="iframeUrlToGo" value="https://news.qq.com/zt2020/page/feiyan.htm"></span></div>
+    <iframe name="iframeWindow"></iframe>
+    <script>
+        function iframeRedirection(url) {
+            window.frames['iframeWindow'].location = url;
+        }
+    </script>
+</div>
+<div>
+    <img src="lindapay.jpg" alt="The Secret Life of Pet">
+    <div id="image_container"></div>
+</div>
+<script>
+function loadInsecureContent() {
+    let img = document.createElement("img");
+    img.src = "http://www.w3schools.com/tags/smiley.gif";
+    img.setAttribute('height', '100px');
+    img.setAttribute('width', '100px');
+    let container = document.getElementById("image_container");
+    container.appendChild(img);
+}
 </script>
