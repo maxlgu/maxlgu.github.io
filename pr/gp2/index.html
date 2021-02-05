@@ -16,6 +16,8 @@
     No payment will be processed. <a href="pr.js">View source</a>.</p>
     <p>Price: USD <strong>$1.00</strong></p>
     <p><button onclick="onBuyClicked()">Buy</button></p>
+    <p><button onclick="openFullscreen()">Open full screen</button></p>
+    <p><button onclick="closeFullscreen()">Close full screen</button></p>
   </div>
   <pre id="msg"></pre>
   <p>Will make the following request for a Stripe token from Google Pay:
@@ -67,6 +69,32 @@
   <script src="../util.js"></script>
   <script src="pr.js"></script>
   <script src="/redirect.js"></script>
+  <script type="text/javascript">
+    /* Get the documentElement (<html>) to display the page in fullscreen */
+    var elem = document.documentElement;
+
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+
+    /* Close fullscreen */
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+      }
+    }
+  </script>
 </body>
 
 </html>
