@@ -16,6 +16,28 @@ function buildPaymentRequest() {
     data: {
       apiVersion: 2,
       apiVersionMinor: 0,
+      allowedPaymentMethods: [{
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'VISA', 'MASTERCARD'],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            'gateway': 'stripe',
+            // Please use your own Stripe public key.
+            'stripe:publishableKey': 'pk_live_lNk21zqKM2BENZENh3rzCUgo',
+            'stripe:version': '2016-07-06',
+          },
+        },
+      }],
+      transactionInfo: {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        totalPriceStatus: 'FINAL',
+        totalPrice: '1.00',
+      },
       // Please use your own Google Pay merchant ID.
       merchantInfo: {
         merchantName: 'Rouslan Solomakhin',
