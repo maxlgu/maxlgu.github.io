@@ -8,12 +8,12 @@ const textEncoder = new TextEncoder();
  */
 async function createPaymentCredential(windowLocalStorageIdentifier) {
   const rp = {
-    id: 'rsolomakhin.github.io',
-    name: 'Rouslan Solomakhin',
+    id: 'maxlgu.github.io',
+    name: 'Max',
   };
   const instrument = {
-    displayName: 'Troy ····',
-    icon: 'https://rsolomakhin.github.io/pr/spc/troy.png',
+    displayName: 'Max Pay',
+    icon: 'https://maxlgu.github.io/pr/spc/troy.png',
   };
   const pubKeyCredParams = [{
     type: 'public-key',
