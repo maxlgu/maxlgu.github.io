@@ -8,12 +8,12 @@ const textEncoder = new TextEncoder();
  */
 async function createPaymentCredential(windowLocalStorageIdentifier) {
   const rp = {
-    id: 'maxlgu.github.io',
+    id: 'rsolomakhin.github.io',
     name: 'Rouslan Solomakhin',
   };
   const instrument = {
     displayName: 'Troy ····',
-    icon: 'https://maxlgu.github.io/pr/spc/troy.png',
+    icon: 'https://rsolomakhin.github.io/pr/spc/troy.png',
   };
   const pubKeyCredParams = [{
     type: 'public-key',
@@ -69,7 +69,7 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
             c => c.charCodeAt(0))],
         networkData: textEncoder.encode('network_data'),
         timeout: 60000,
-        fallbackUrl: 'https://maxlgu.github.io/pr/spc/fallback'
+        fallbackUrl: 'https://rsolomakhin.github.io/pr/spc/fallback'
       },
     }];
 
