@@ -69,7 +69,7 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
             c => c.charCodeAt(0))],
         networkData: textEncoder.encode('network_data'),
         timeout: 60000,
-        fallbackUrl: 'https://rsolomakhin.github.io/pr/spc/fallback'
+        fallbackUrl: 'https://maxlgu.github.io/pr/spc/fallback'
       },
     }];
 
@@ -126,5 +126,30 @@ async function checkCanMakePayment(windowLocalStorageIdentifier) {
     info(windowLocalStorageIdentifier + ': ' + (result ? 'Can make payment.' : 'Cannot make payment'));
   } catch (err) {
     error(err);
+  }
+}
+
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
   }
 }
