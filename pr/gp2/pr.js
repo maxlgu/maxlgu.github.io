@@ -27,8 +27,8 @@ function buildPaymentRequest() {
           parameters: {
             'gateway': 'stripe',
             // Please use your own Stripe public key.
-            'stripe:publishableKey': 'pk_live_lNk21zqKM2BENZENh3rzCUgo',
-            'stripe:version': '2016-07-06',
+            'stripe:publishableKey': 'pk_live_51I9BgbBM4NK0LRL5IptoTliS9Oliur3l2dxKLkvTBeXbtLh5ES8eCU0jhXjrof5apgiMW9sEWpPHFiFPe2K1oSOG00JVlmcvNX',
+            'stripe:version': '2018-10-31',
           },
         },
       }],
@@ -40,8 +40,8 @@ function buildPaymentRequest() {
       },
       // Please use your own Google Pay merchant ID.
       merchantInfo: {
-        merchantName: 'Rouslan Solomakhin',
-        merchantId: '00184145120947117657',
+        merchantName: 'Liquan Gu',
+        merchantId: '12033799061467295567',
       },
     },
   }];
