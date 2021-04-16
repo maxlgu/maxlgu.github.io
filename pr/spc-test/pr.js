@@ -107,7 +107,7 @@ async function onBuyClicked(windowLocalStorageIdentifier) {
   try {
     const instrumentResponse = await request.show();
     await instrumentResponse.complete('success')
-    info(windowLocalStorageIdentifier + ': ' + JSON.stringify(instrumentResponse, undefined, 2));
+    info(windowLocalStorageIdentifier + ': your payment is successful!\n\n' + JSON.stringify(instrumentResponse, undefined, 2));
   } catch (err) {
     error(err);
   }
