@@ -25,13 +25,14 @@
   </div>
   <pre id="msg"></pre>
   <p><em>Enroll Credential</em> will make the following request:
-  <pre style="color: #265289">const instrument = {
-  displayName: 'Troy ····',
-  icon: 'https://maxlgu.github.io/pr/spc/troy.png',
-};
+  <pre style="color: #265289">
 const rp = {
   id: 'maxlgu.github.io',
   name: 'Max',
+};
+const instrument = {
+  displayName: 'Max Pay',
+  icon: 'https://maxlgu.github.io/pr/spc/troy.png',
 };
 const pubKeyCredParams = [{
   type: 'public-key',
@@ -40,6 +41,9 @@ const pubKeyCredParams = [{
   type: 'public-key',
   alg: -257,  // RSA, supported on Windows.
 }];
+const authenticatorSelection = {
+  userVerification: 'required',
+};
 const payment = {
   rp,
   instrument,
