@@ -25,6 +25,7 @@
     <p><button onclick="createPaymentCredential('id1')">Enroll Credential #2</button></p>
     <p><button onclick="onBuyClicked('id0')">Pay $0.01</button> (with credential #1)</p>
     <p><button onclick="onBuyClicked('id1')">Pay $0.01</button> (with credential #2)</p>
+    <p><button onclick="createPaymentCredentialIn5s('id0')">Enroll Credential #1 in 5s</button></p>
     <p><button onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
     <p><button onclick="changeWindowIn10s()">Change window in 10s</button></p>
     <p><button onclick="openFullscreen()">Open full screen</button></p>
@@ -87,6 +88,13 @@ window.localStorage.setItem(
   <script src="/redirect.js"></script>
   <script>
     checkCanMakePayment('id0');
+
+    function createPaymentCredentialIn5s(id) {
+      info("create new credential in 5s.");
+      setTimeout(() => {
+        createPaymentCredential(id);
+      }, 10000);
+    }
   </script>
 </body>
 
