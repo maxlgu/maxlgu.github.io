@@ -13,7 +13,7 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
   };
   const instrument = {
     displayName: 'Max Pay',
-    icon: 'https://maxlgu.github.io/pr/spc/troy.png',
+    icon: 'https://liquangumax.github.io/lindapay/dog.png',
   };
   const pubKeyCredParams = [{
     type: 'public-key',
