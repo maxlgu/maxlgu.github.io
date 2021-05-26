@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+     - Origin trial for secure payment confirmation:
+     - https://developer.chrome.com/origintrials/#/view_trial/2735936773627576321
+     -->
+  <meta http-equiv="origin-trial"
+  content="Al8eCVNdKr1+VUt1pyCfb5LMmg3MxpEw9EfcnY8jYtMryHHukZG6lDxVeRjL8bpEGT+cXeK4rM4WMDaixmUueQAAAAB9eyJvcmlnaW4iOiJodHRwczovL3Jzb2xvbWFraGluLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiU2VjdXJlUGF5bWVudENvbmZpcm1hdGlvblYyIiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
+
+  <title>Secure Payment Confirmation</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+  <div id="contents">
+    <h1>Amazoom</h1>
+    <h2>
+      Shopping cart
+    </h2>
+    <p>
+      <strong>Widget</strong> x 1<br><br>
+      Price: $0.01 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Amount:
+      <input type"number" value="1" size="1" /> Remove: <input type="button" value="x" />
+    </p>
+    <hr>
+    <p>If this is your first time, visit <a href="https://lumbar-brick-soup.glitch.me/">https://lumbar-brick-soup.glitch.me/</a>
+      to install the credential enrollment payment handler.</p>
+    <iframe id="checkout" src="https://maxpay-spc-psp.glitch.me/" allow="payment" width="90%"" height="400px"></iframe>
+  </div>
+  <p>Based on the <a
+  href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure
+  Payment Confirmation explainer</a>.</p>
+  <script src="/redirect.js"></script>
+</body>
+
+</html>
