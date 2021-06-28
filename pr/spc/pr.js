@@ -24,6 +24,7 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
   }];
   const authenticatorSelection = {
     userVerification: 'required',
+    authenticatorAttachment: "platform",
   };
   const payment = {
     rp,
