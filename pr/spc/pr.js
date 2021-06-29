@@ -23,7 +23,6 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
     alg: -257,  // RSA, supported on Windows.
   }];
   const authenticatorSelection = {
-    userVerification: 'required',
     authenticatorAttachment: "platform",
   };
   const payment = {
