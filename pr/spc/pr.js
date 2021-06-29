@@ -23,7 +23,9 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
     alg: -257,  // RSA, supported on Windows.
   }];
   const authenticatorSelection = {
-    authenticatorAttachment: "platform",
+    authenticatorAttachment: 'platform',
+    requireResidentKey: false,
+    userVerification: 'discouraged',
   };
   const payment = {
     rp,
@@ -31,6 +33,7 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
     challenge: textEncoder.encode('Transaction approval challenge'),
     pubKeyCredParams,
     authenticatorSelection,
+    attestation: "none",
   };
   try {
     const publicKeyCredential = await navigator.credentials.create({payment});
