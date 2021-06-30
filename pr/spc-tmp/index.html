@@ -22,68 +22,130 @@
     <h1>Secure Payment Confirmation</h1>
     <p>This is a test website. Nothing is charged.</p>
     <p><button onclick="createPaymentCredential('id0')">Enroll Credential #1</button></p>
-    <p><button onclick="createPaymentCredential('id1')">Enroll Credential #2</button></p>
-    <p>origin to display:<input type="text" id="origin"></input><button onclick="document.getElementById('origin').value=''">clear</button></p>
+    <p>origin to display:<input type="text" id="origin"></input><button onclick="document.getElementById('origin').value=''">Clear</button></p>
     <p><button onclick="onBuyClicked('id0')">Pay $0.01</button> (with credential #1)</p>
-    <p><button onclick="onBuyClicked('id1')">Pay $0.01</button> (with credential #2)</p>
     <p><button onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
     <p><button onclick="changeWindowIn10s()">Change window in 10s</button></p>
     <p><button onclick="openFullscreen()">Open full screen</button></p>
     <p><button onclick="closeFullscreen()">Close full screen</button></p>
+      <h3>Simple</h3>
+      <ul>
+      <li><a href="https://example.test">Baseline case (example.test) (https)</a></li>
+      <li><a href="http://example.test">Baseline case (example.test) (http)</a></li>
+      <li><a href="https://evil.test">Evil.test, for testing paths do not cause the evil.test origin to be hidden</a></li>
+      <li><a href="https://user:pass@example.test">URL with username and password</a></li>
+      <li><a href="https://example.test:8080">URL with non-default port</a></li>
+      <li><a href="http://127.0.0.1">URL with IPv4 literal hostname</a></li>
+      <li><a href="http://[::1]">URL with IPv6 literal hostname</a></li>
+      <li><a href="data:,Hello">data: URL</a> (copy and paste URL in Chrome, which disallows top-level navigations to data: URLs)</a></li>
+      <li><a href="ftp://example.test">ftp:// URL</a></li>
+      </ul>
+
+      <h3>IDNs and homoglyphs</h3>
+
+      <h4>RTL</h4>
+      <ul>
+      <li><a href="https://مثال.com">RTL url with LTR tld (https)</a></li>
+      <li><a href="https://مثال.إختبار">RTL url with RTL tld (https)</a></li>
+      <li><a href="https://example.إختبار">LTR url with RTL tld (https)</a></li>
+      <li><a href="http://مثال.com">RTL url with LTR tld (http)</a></li>
+      <li><a href="http://مثال.إختبار">RTL url with RTL tld (http)</a></li>
+      <li><a href="http://example.إختبار">LTR url with RTL tld (http)</a></li>
+      </ul>
+
+
+      <h4>Homoglyphs</h4>
+      <ul>
+      <li><a href="https://еxample.test">URL uses Cyrillic е instead of e</a></li>
+      <li><a href="https://еxӑmple.test">URL uses Cyrillic ӑ instead of a</a></li>
+      <li><a href="https://а.example.test">URL uses Cyrillic а in its own label</a></li>
+      <li><a href="https://ӑ.example.test">URL uses Cyrillic ӑ in its own label</a></li>
+      <li><a href="https://examp1e.test">URL uses number one instead of l</a></li>
+      <li><a href="https://bankofthevvest.com">URL uses "vv" instead of "w"</a></li>
+      <li><a href="https://go0gle.com">URL uses "0" instead of "o"</a></li>
+      <li><a href="https://aO12.com">URL with a single letter and numbers uses "O" instead of "0"</a></li>
+      <li><a href="https://a0l2.com">URL with a single letter and numbers uses "l" instead of "1"</a></li>
+      <li><a href="https://а012.com">URL with a single letter and numbers uses Cyrillic а instead of Latin a</a></li>
+      <li><a href="https://α012.com">URL with a single letter and numbers uses Greek α instead of Latin a</a></li>
+      <li><a href="https://аррӏе.com">URL with entire domain name "аррӏе" as all Cyrillic characters</a></li>
+      </ul>
+
+      <h3>Unusual characters</h3>
+      <ul>
+      <li><a href="https://example.test/space-path-test ">URL with non-breaking space in path (U+202F)</a></li>
+      <li><a href="https://example.test/?space-path-test= ">URL with non-breaking space in query (U+202F)</a></li>
+      <li><a href="https://example.test/#space-path-test ">URL with non-breaking space in fragment (U+202F)</a></li>
+      <li><a href="https://xn--https-5w14d.com">URL with a lock emoji in the domain</a></li>
+      <li><a href="https://xn--banana-ox34e.com">URL with a banana emoji in the domain</a></li>
+      <li><a href="https://🍌.example.com">URL with an emoji in its own label</a></li>
+      <li><a href="https://banana.🍌">URL with an emoji in its TLD</a></li>
+      <li><a href="https://example.com/🔒">URL with a lock emoji in the path</a></li>
+      <li><a href="https://example.com/🍌">URL with a banana emoji in the path</a></li>
+      <li><a href="https://example.com/?foo=🔒">URL with a lock emoji in the query</a></li>
+      <li><a href="https://example.com/?foo=🍌">URL with a banana emoji in the query</a></li>
+      <li><a href="https://example.com/foo#🔒">URL with a lock emoji in the fragment</a></li>
+      <li><a href="https://example.com/foo#🍌">URL with a banana emoji in the fragment</a></li>
+      <li><a href="https://example.com/foo   bar">URL with spaces in the path</a></li>
+      <li><a href="https://example.com/?foo=   bar">URL with spaces in the query</a></li>
+      <li><a href="https://example.com/#foo   bar">URL with spaces in the fragment</a></li>
+      </ul>
+
+      <h3>Long URLs</h3>
+      <ul>
+      <li><a href="https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test">Extremely long URL to trigger elision, ending in an url that looks similar to example.test</a></li>
+      <li><a href="https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test">Extremely long URL to trigger elision, starting with a url that looks similar to example.test</a></li>
+      <li><a href="verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long path ending in example.test</a></li>
+      <li><a href="?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long query ending in example.test</a></li>
+      <li><a href="#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long fragment ending in example.test</a></li>
+      <li><a href="https://example.example.example.example.example.example.example.example.example.example.example.test">URL with many subdomains</a></li>
+      </ul>
+
+      <h3>Short URLs</h3>
+      <ul>
+      <li><a href="https://a.com">Very short URL</a></li>
+      <li><a href="https://а.com">Very short URL that uses a Cyrillic a</a></li>
+      <li><a href="https://1.com">Very short URL that uses a number</a></li>
+      <li><a href="https://_.com">Very short URL that uses an underscore</a></li>
+      </ul>
+
+    <h2>Web feature tests</h2>
+    <p>
+      These tests exercise individual web platform features to test how they
+      display URLs. After loading one of the tricky URLs above, exercise these
+      web feature tests to observe how the individual features display the
+      tricky URL.
+    </p>
+
+    <h3>JavaScript dialogs</h3>
+    <ul>
+    <li><a href="/web-feature-tests/alert_test.html">alert</a></li>
+    <li><a href="/web-feature-tests/confirm_test.html">confirm</a></li>
+    <li><a href="/web-feature-tests/prompt_test.html">prompt</a></li>
+    </ul>
+
+    <h3>Permissions and permission-gated features</h3>
+    <ul>
+    <li><a href="/web-feature-tests/permissions_test.html">Permission prompt</a></li>
+    <li><a href="/web-feature-tests/notification.html">Notifications</a></li>
+    <li><a href="/web-feature-tests/webusb.html">WebUSB</a></li>
+    <li><a href="/web-feature-tests/webbluetooth.html">WebBluetooth</a></li>
+    </ul>
+
+    <h3>Authentication</h3>
+    <ul>
+    <li><a href="/web-feature-tests/http-auth/index.html">HTTP Auth</a></li>
+    <li><a href="/web-feature-tests/webauthn_test.html">WebAuthn</a></li>
+    </ul>
+
+    <h3>External protocol handlers</h3>
+    <ul>
+    <li><a href="/web-feature-tests/external_protocol_handler_test.html">External protocol handler</a></li>
+    </ul>
+
   </div>
   <pre id="msg"></pre>
   <p><em>Enroll Credential</em> will make the following request:
-  <pre style="color: #265289">
-const rp = {
-  id: 'maxlgu.github.io',
-  name: 'Max',
-};
-const instrument = {
-  displayName: 'Max Pay',
-  icon: 'https://maxlgu.github.io/pr/spc/troy.png',
-};
-const pubKeyCredParams = [{
-  type: 'public-key',
-  alg: -7,  // ECDSA, not supported on Windows.
-}, {
-  type: 'public-key',
-  alg: -257,  // RSA, supported on Windows.
-}];
-const authenticatorSelection = {
-  userVerification: 'required',
-};
-const payment = {
-  rp,
-  instrument,
-  challenge: textEncoder.encode('Transaction approval challenge'),
-  pubKeyCredParams,
-};
-const publicKeyCredential = await navigator.credentials.create({payment});
-window.localStorage.setItem(
-    'credential_identifier',
-    btoa(String.fromCharCode(...new Uint8Array(
-        publicKeyCredential.rawId))));</pre></p>
-  <p><em>Pay $0.01</em> will make the following request:
-  <pre style="color: #265289">new PaymentRequest([{
-  supportedMethods: 'secure-payment-confirmation',
-  data: {
-    action: 'authenticate',
-    credentialIds: [Uint8Array.from(
-        atob(window.localStorage.getItem('credential_identifier')),
-        c => c.charCodeAt(0))],
-    networkData: textEncoder.encode('network_data'),
-    timeout: 60000,
-    fallbackUrl: 'https://maxlgu.github.io/pr/spc/fallback'
-  },
-}], {
-  total: {
-    label: 'Total',
-    amount: {
-      currency: 'USD',
-      value: '0.01',
-    },
-  },
-});</pre></p>
+
   <p>Based on the <a
   href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure
   Payment Confirmation explainer</a>.</p>
