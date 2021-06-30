@@ -28,91 +28,84 @@
     <p><button onclick="changeWindowIn10s()">Change window in 10s</button></p>
     <p><button onclick="openFullscreen()">Open full screen</button></p>
     <p><button onclick="closeFullscreen()">Close full screen</button></p>
-
-
-
-
-
-
-    
       <h3>Simple</h3>
       <ul>
-      <li><a href="https://example.test">Baseline case (example.test) (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://example.test">Baseline case (example.test) (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://example.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://evil.test">Evil.test, for testing paths do not cause the evil.test origin to be hidden</a> <button onclick="onBuyClickedWithUrl('id0', 'https://evil.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://user:pass@example.test">URL with username and password</a> <button onclick="onBuyClickedWithUrl('id0', 'https://user:pass@example.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.test:8080">URL with non-default port</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test:8080')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://127.0.0.1">URL with IPv4 literal hostname</a> <button onclick="onBuyClickedWithUrl('id0', 'http://127.0.0.1')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://[::1]">URL with IPv6 literal hostname</a> <button onclick="onBuyClickedWithUrl('id0', 'http://[::1]')">onBuyClickedWithUrl</button></li>
-      <li><a href="data:,Hello">data: URL</a> (copy and paste URL in Chrome, which disallows top-level navigations to data: URLs)</a> <button onclick="onBuyClickedWithUrl('id0', 'data:,Hello')">onBuyClickedWithUrl</button></li>
-      <li><a href="ftp://example.test">ftp:// URL</a> <button onclick="onBuyClickedWithUrl('id0', 'ftp://example.test')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://example.test">Baseline case (example.test) (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test')">https://example.test</button></li>
+      <li><a href="http://example.test">Baseline case (example.test) (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://example.test')">http://example.test</button></li>
+      <li><a href="https://evil.test">Evil.test, for testing paths do not cause the evil.test origin to be hidden</a> <button onclick="onBuyClickedWithUrl('id0', 'https://evil.test')">https://evil.test</button></li>
+      <li><a href="https://user:pass@example.test">URL with username and password</a> <button onclick="onBuyClickedWithUrl('id0', 'https://user:pass@example.test')">https://user:pass@example.test</button></li>
+      <li><a href="https://example.test:8080">URL with non-default port</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test:8080')">https://example.test:8080</button></li>
+      <li><a href="http://127.0.0.1">URL with IPv4 literal hostname</a> <button onclick="onBuyClickedWithUrl('id0', 'http://127.0.0.1')">http://127.0.0.1</button></li>
+      <li><a href="http://[::1]">URL with IPv6 literal hostname</a> <button onclick="onBuyClickedWithUrl('id0', 'http://[::1]')">http://[::1]</button></li>
+      <li><a href="data:,Hello">data: URL</a> (copy and paste URL in Chrome, which disallows top-level navigations to data: URLs)</a> <button onclick="onBuyClickedWithUrl('id0', 'data:,Hello')">data:,Hello</button></li>
+      <li><a href="ftp://example.test">ftp:// URL</a> <button onclick="onBuyClickedWithUrl('id0', 'ftp://example.test')">ftp://example.test</button></li>
       </ul>
 
       <h3>IDNs and homoglyphs</h3>
 
       <h4>RTL</h4>
       <ul>
-      <li><a href="https://مثال.com">RTL url with LTR tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://مثال.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://مثال.إختبار">RTL url with RTL tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://مثال.إختبار')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.إختبار">LTR url with RTL tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.إختبار')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://مثال.com">RTL url with LTR tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://مثال.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://مثال.إختبار">RTL url with RTL tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://مثال.إختبار')">onBuyClickedWithUrl</button></li>
-      <li><a href="http://example.إختبار">LTR url with RTL tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://example.إختبار')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://مثال.com">RTL url with LTR tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://مثال.com')">https://مثال.com</button></li>
+      <li><a href="https://مثال.إختبار">RTL url with RTL tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://مثال.إختبار')">https://مثال.إختبار</button></li>
+      <li><a href="https://example.إختبار">LTR url with RTL tld (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.إختبار')">https://example.إختبار</button></li>
+      <li><a href="http://مثال.com">RTL url with LTR tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://مثال.com')">http://مثال.com</button></li>
+      <li><a href="http://مثال.إختبار">RTL url with RTL tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://مثال.إختبار')">http://مثال.إختبار</button></li>
+      <li><a href="http://example.إختبار">LTR url with RTL tld (http)</a> <button onclick="onBuyClickedWithUrl('id0', 'http://example.إختبار')">http://example.إختبار</button></li>
       </ul>
 
 
       <h4>Homoglyphs</h4>
       <ul>
-      <li><a href="https://еxample.test">URL uses Cyrillic е instead of e</a> <button onclick="onBuyClickedWithUrl('id0', 'https://еxample.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://еxӑmple.test">URL uses Cyrillic ӑ instead of a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://еxӑmple.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://а.example.test">URL uses Cyrillic а in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а.example.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://ӑ.example.test">URL uses Cyrillic ӑ in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://ӑ.example.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://examp1e.test">URL uses number one instead of l</a> <button onclick="onBuyClickedWithUrl('id0', 'https://examp1e.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://bankofthevvest.com">URL uses "vv" instead of "w"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://bankofthevvest.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://go0gle.com">URL uses "0" instead of "o"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://go0gle.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://aO12.com">URL with a single letter and numbers uses "O" instead of "0"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://aO12.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://a0l2.com">URL with a single letter and numbers uses "l" instead of "1"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://a0l2.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://а012.com">URL with a single letter and numbers uses Cyrillic а instead of Latin a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а012.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://α012.com">URL with a single letter and numbers uses Greek α instead of Latin a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://α012.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://аррӏе.com">URL with entire domain name "аррӏе" as all Cyrillic characters</a> <button onclick="onBuyClickedWithUrl('id0', 'https://аррӏе.com')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://еxample.test">URL uses Cyrillic е instead of e</a> <button onclick="onBuyClickedWithUrl('id0', 'https://еxample.test')">https://еxample.test</button></li>
+      <li><a href="https://еxӑmple.test">URL uses Cyrillic ӑ instead of a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://еxӑmple.test')">https://еxӑmple.test</button></li>
+      <li><a href="https://а.example.test">URL uses Cyrillic а in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а.example.test')">https://а.example.test</button></li>
+      <li><a href="https://ӑ.example.test">URL uses Cyrillic ӑ in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://ӑ.example.test')">https://ӑ.example.test</button></li>
+      <li><a href="https://examp1e.test">URL uses number one instead of l</a> <button onclick="onBuyClickedWithUrl('id0', 'https://examp1e.test')">https://examp1e.test</button></li>
+      <li><a href="https://bankofthevvest.com">URL uses "vv" instead of "w"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://bankofthevvest.com')">https://bankofthevvest.com</button></li>
+      <li><a href="https://go0gle.com">URL uses "0" instead of "o"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://go0gle.com')">https://go0gle.com</button></li>
+      <li><a href="https://aO12.com">URL with a single letter and numbers uses "O" instead of "0"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://aO12.com')">https://aO12.com</button></li>
+      <li><a href="https://a0l2.com">URL with a single letter and numbers uses "l" instead of "1"</a> <button onclick="onBuyClickedWithUrl('id0', 'https://a0l2.com')">https://a0l2.com</button></li>
+      <li><a href="https://а012.com">URL with a single letter and numbers uses Cyrillic а instead of Latin a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а012.com')">https://а012.com</button></li>
+      <li><a href="https://α012.com">URL with a single letter and numbers uses Greek α instead of Latin a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://α012.com')">https://α012.com</button></li>
+      <li><a href="https://аррӏе.com">URL with entire domain name "аррӏе" as all Cyrillic characters</a> <button onclick="onBuyClickedWithUrl('id0', 'https://аррӏе.com')">https://аррӏе.com</button></li>
       </ul>
 
       <h3>Unusual characters</h3>
       <ul>
-      <li><a href="https://example.test/space-path-test ">URL with non-breaking space in path (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/space-path-test ')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.test/?space-path-test= ">URL with non-breaking space in query (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/?space-path-test= ')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.test/#space-path-test ">URL with non-breaking space in fragment (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/#space-path-test ')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://xn--https-5w14d.com">URL with a lock emoji in the domain</a> <button onclick="onBuyClickedWithUrl('id0', 'https://xn--https-5w14d.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://xn--banana-ox34e.com">URL with a banana emoji in the domain</a> <button onclick="onBuyClickedWithUrl('id0', 'https://xn--banana-ox34e.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://🍌.example.com">URL with an emoji in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://🍌.example.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://banana.🍌">URL with an emoji in its TLD</a> <button onclick="onBuyClickedWithUrl('id0', 'https://banana.🍌')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/🔒">URL with a lock emoji in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/🔒')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/🍌">URL with a banana emoji in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/🍌')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/?foo=🔒">URL with a lock emoji in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=🔒')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/?foo=🍌">URL with a banana emoji in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=🍌')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/foo#🔒">URL with a lock emoji in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo#🔒')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/foo#🍌">URL with a banana emoji in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo#🍌')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/foo   bar">URL with spaces in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo   bar')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/?foo=   bar">URL with spaces in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=   bar')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.com/#foo   bar">URL with spaces in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/#foo   bar')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://example.test/space-path-test ">URL with non-breaking space in path (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/space-path-test ')">https://example.test/space-path-test </button></li>
+      <li><a href="https://example.test/?space-path-test= ">URL with non-breaking space in query (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/?space-path-test= ')">https://example.test/?space-path-test= </button></li>
+      <li><a href="https://example.test/#space-path-test ">URL with non-breaking space in fragment (U+202F)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test/#space-path-test ')">https://example.test/#space-path-test </button></li>
+      <li><a href="https://xn--https-5w14d.com">URL with a lock emoji in the domain</a> <button onclick="onBuyClickedWithUrl('id0', 'https://xn--https-5w14d.com')">https://xn--https-5w14d.com</button></li>
+      <li><a href="https://xn--banana-ox34e.com">URL with a banana emoji in the domain</a> <button onclick="onBuyClickedWithUrl('id0', 'https://xn--banana-ox34e.com')">https://xn--banana-ox34e.com</button></li>
+      <li><a href="https://🍌.example.com">URL with an emoji in its own label</a> <button onclick="onBuyClickedWithUrl('id0', 'https://🍌.example.com')">https://🍌.example.com</button></li>
+      <li><a href="https://banana.🍌">URL with an emoji in its TLD</a> <button onclick="onBuyClickedWithUrl('id0', 'https://banana.🍌')">https://banana.🍌</button></li>
+      <li><a href="https://example.com/🔒">URL with a lock emoji in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/🔒')">https://example.com/🔒</button></li>
+      <li><a href="https://example.com/🍌">URL with a banana emoji in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/🍌')">https://example.com/🍌</button></li>
+      <li><a href="https://example.com/?foo=🔒">URL with a lock emoji in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=🔒')">https://example.com/?foo=🔒</button></li>
+      <li><a href="https://example.com/?foo=🍌">URL with a banana emoji in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=🍌')">https://example.com/?foo=🍌</button></li>
+      <li><a href="https://example.com/foo#🔒">URL with a lock emoji in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo#🔒')">https://example.com/foo#🔒</button></li>
+      <li><a href="https://example.com/foo#🍌">URL with a banana emoji in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo#🍌')">https://example.com/foo#🍌</button></li>
+      <li><a href="https://example.com/foo   bar">URL with spaces in the path</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/foo   bar')">https://example.com/foo   bar</button></li>
+      <li><a href="https://example.com/?foo=   bar">URL with spaces in the query</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/?foo=   bar')">https://example.com/?foo=   bar</button></li>
+      <li><a href="https://example.com/#foo   bar">URL with spaces in the fragment</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.com/#foo   bar')">https://example.com/#foo   bar</button></li>
       </ul>
 
       <h3>Long URLs</h3>
       <ul>
-      <li><a href="https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test">Extremely long URL to trigger elision, ending in an url that looks similar to example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test">Extremely long URL to trigger elision, starting with a url that looks similar to example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long path ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long query ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', '?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long fragment ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', '#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://example.example.example.example.example.example.example.example.example.example.example.test">URL with many subdomains</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.example.example.example.example.example.example.example.example.example.example.test')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test">Extremely long URL to trigger elision, ending in an url that looks similar to example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test')">https://extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlexample.test</button></li>
+      <li><a href="https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test">Extremely long URL to trigger elision, starting with a url that looks similar to example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test')">https://example.test----extremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturlextremelylongurlmeanttotriggerelisionendinginadifferenturl.test</button></li>
+      <li><a href="verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long path ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', 'verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test</button></li>
+      <li><a href="?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long query ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', '?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">?verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test</button></li>
+      <li><a href="#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test">A very long fragment ending in example.test</a> <button onclick="onBuyClickedWithUrl('id0', '#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test')">#verylongpathverylongpathverylongpathverylongpathverylongpathverylongpathexample.test</button></li>
+      <li><a href="https://example.example.example.example.example.example.example.example.example.example.example.test">URL with many subdomains</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.example.example.example.example.example.example.example.example.example.example.test')">https://example.example.example.example.example.example.example.example.example.example.example.test</button></li>
       </ul>
 
       <h3>Short URLs</h3>
       <ul>
-      <li><a href="https://a.com">Very short URL</a> <button onclick="onBuyClickedWithUrl('id0', 'https://a.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://а.com">Very short URL that uses a Cyrillic a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://1.com">Very short URL that uses a number</a> <button onclick="onBuyClickedWithUrl('id0', 'https://1.com')">onBuyClickedWithUrl</button></li>
-      <li><a href="https://_.com">Very short URL that uses an underscore</a> <button onclick="onBuyClickedWithUrl('id0', 'https://_.com')">onBuyClickedWithUrl</button></li>
+      <li><a href="https://a.com">Very short URL</a> <button onclick="onBuyClickedWithUrl('id0', 'https://a.com')">https://a.com</button></li>
+      <li><a href="https://а.com">Very short URL that uses a Cyrillic a</a> <button onclick="onBuyClickedWithUrl('id0', 'https://а.com')">https://а.com</button></li>
+      <li><a href="https://1.com">Very short URL that uses a number</a> <button onclick="onBuyClickedWithUrl('id0', 'https://1.com')">https://1.com</button></li>
+      <li><a href="https://_.com">Very short URL that uses an underscore</a> <button onclick="onBuyClickedWithUrl('id0', 'https://_.com')">https://_.com</button></li>
       </ul>
 
     <h2>Web feature tests</h2>
@@ -125,37 +118,29 @@
 
     <h3>JavaScript dialogs</h3>
     <ul>
-    <li><a href="/web-feature-tests/alert_test.html">alert</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/alert_test.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/confirm_test.html">confirm</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/confirm_test.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/prompt_test.html">prompt</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/prompt_test.html')">onBuyClickedWithUrl</button></li>
+    <li><a href="/web-feature-tests/alert_test.html">alert</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/alert_test.html')">/web-feature-tests/alert_test.html</button></li>
+    <li><a href="/web-feature-tests/confirm_test.html">confirm</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/confirm_test.html')">/web-feature-tests/confirm_test.html</button></li>
+    <li><a href="/web-feature-tests/prompt_test.html">prompt</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/prompt_test.html')">/web-feature-tests/prompt_test.html</button></li>
     </ul>
 
     <h3>Permissions and permission-gated features</h3>
     <ul>
-    <li><a href="/web-feature-tests/permissions_test.html">Permission prompt</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/permissions_test.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/notification.html">Notifications</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/notification.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/webusb.html">WebUSB</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webusb.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/webbluetooth.html">WebBluetooth</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webbluetooth.html')">onBuyClickedWithUrl</button></li>
+    <li><a href="/web-feature-tests/permissions_test.html">Permission prompt</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/permissions_test.html')">/web-feature-tests/permissions_test.html</button></li>
+    <li><a href="/web-feature-tests/notification.html">Notifications</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/notification.html')">/web-feature-tests/notification.html</button></li>
+    <li><a href="/web-feature-tests/webusb.html">WebUSB</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webusb.html')">/web-feature-tests/webusb.html</button></li>
+    <li><a href="/web-feature-tests/webbluetooth.html">WebBluetooth</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webbluetooth.html')">/web-feature-tests/webbluetooth.html</button></li>
     </ul>
 
     <h3>Authentication</h3>
     <ul>
-    <li><a href="/web-feature-tests/http-auth/index.html">HTTP Auth</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/http-auth/index.html')">onBuyClickedWithUrl</button></li>
-    <li><a href="/web-feature-tests/webauthn_test.html">WebAuthn</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webauthn_test.html')">onBuyClickedWithUrl</button></li>
+    <li><a href="/web-feature-tests/http-auth/index.html">HTTP Auth</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/http-auth/index.html')">/web-feature-tests/http-auth/index.html</button></li>
+    <li><a href="/web-feature-tests/webauthn_test.html">WebAuthn</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/webauthn_test.html')">/web-feature-tests/webauthn_test.html</button></li>
     </ul>
 
     <h3>External protocol handlers</h3>
     <ul>
-    <li><a href="/web-feature-tests/external_protocol_handler_test.html">External protocol handler</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/external_protocol_handler_test.html')">onBuyClickedWithUrl</button></li>
+    <li><a href="/web-feature-tests/external_protocol_handler_test.html">External protocol handler</a> <button onclick="onBuyClickedWithUrl('id0', '/web-feature-tests/external_protocol_handler_test.html')">/web-feature-tests/external_protocol_handler_test.html</button></li>
     </ul>
-
-
-
-
-
-
-
-
 
   </div>
   <pre id="msg"></pre>
