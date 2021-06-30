@@ -101,7 +101,7 @@ async function onBuyClickedWithUrl(windowLocalStorageIdentifier, url) {
     return;
   }
 
-  const request = await buildPaymentRequestWithUrl(windowLocalStorageIdentifier);
+  const request = await buildPaymentRequestWithUrl(windowLocalStorageIdentifier, url);
   if (!request)
     return;
 
