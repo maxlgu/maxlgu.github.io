@@ -95,6 +95,70 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
   return request;
 }
 
+async function onBuyClickedWithUrl(windowLocalStorageIdentifier, url) {
+  if (!window.PaymentRequest) {
+    error('PaymentRequest API is not supported.');
+    return;
+  }
+
+  const request = await buildPaymentRequestWithUrl(windowLocalStorageIdentifier);
+  if (!request)
+    return;
+
+  try {
+    const instrumentResponse = await request.show();
+    await instrumentResponse.complete('success')
+    info(windowLocalStorageIdentifier + ': your payment is successful!\n\n' + JSON.stringify(instrumentResponse, undefined, 2));
+  } catch (err) {
+    error(err);
+  }
+}
+
+
+/**
+ * Initializes the payment request object.
+ * @return {PaymentRequest} The payment request object.
+ */
+async function buildPaymentRequestWithUrl(windowLocalStorageIdentifier, url) {
+  if (!window.PaymentRequest) {
+    return null;
+  }
+
+  let request = null;
+
+  try {
+    // Documentation:
+    // https://github.com/rsolomakhin/secure-payment-confirmation
+    const supportedInstruments = [{
+      supportedMethods: 'secure-payment-confirmation',
+      data: {
+        action: 'authenticate',
+        credentialIds: [Uint8Array.from(
+            atob(window.localStorage.getItem(windowLocalStorageIdentifier)),
+            c => c.charCodeAt(0))],
+        networkData: textEncoder.encode('network_data'),
+        timeout: 60000,
+        fallbackUrl: 'https://maxlgu.github.io/pr/spc/fallback'
+      },
+    }];
+    const details = {
+      total: {
+        label: url,
+        amount: {
+          currency: 'USD',
+          value: '0.01',
+        },
+      },
+    };
+
+    request = new PaymentRequest(supportedInstruments, details);
+  } catch (err) {
+    error(err);
+  }
+
+  return request;
+}
+
 /**
  * Launches payment request for Android Pay.
  */
