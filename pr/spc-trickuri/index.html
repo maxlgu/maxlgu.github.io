@@ -23,13 +23,9 @@
     <p>This test site needs to be used with a local build of Chrome with <a href="https://chromium-review.googlesource.com/c/chromium/src/+/2998124">this patch</a>. This test page is to pressure-test the origin display of the SPC Authn UI, to ensure that the edge cases
       of URIs can be displayed correctly and safely on the UI. The URIs of the page comes from <a href="https://github.com/chromium/trickuri">https://github.com/chromium/trickuri</a>.</p>
     <p>This is a test website. Nothing is charged.</p>
-    <p><button onclick="createPaymentCredential('id0')">Enroll Credential #1</button></p>
-    <p>origin to display:<input type="text" id="origin"></input><button onclick="document.getElementById('origin').value=''">Clear</button></p>
-    <p><button onclick="onBuyClicked('id0')">Pay $0.01</button> (with credential #1)</p>
-    <p><button onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
-    <p><button onclick="changeWindowIn10s()">Change window in 10s</button></p>
-    <p><button onclick="openFullscreen()">Open full screen</button></p>
-    <p><button onclick="closeFullscreen()">Close full screen</button></p>
+    <p><b>Step 1: </b>Build Chrome with <a href="https://chromium-review.googlesource.com/c/chromium/src/+/2998124">this patch</a>. </p>
+    <p><b>Step 2: Click </b><button onclick="createPaymentCredential('id0')">Enroll Credential #1</button></p>
+    <p><b>Step 3: </b>Click the buttons below to test the SPC Authn UI with different URIs</p>
       <h3>Simple</h3>
       <ul>
       <li><a href="https://example.test">Baseline case (example.test) (https)</a> <button onclick="onBuyClickedWithUrl('id0', 'https://example.test')">https://example.test</button></li>
