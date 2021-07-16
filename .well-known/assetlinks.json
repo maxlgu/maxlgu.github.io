@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target" : { "namespace": "android_app", "package_name": "io.github.maxlgu",
-               "sha256_cert_fingerprints": ["3C:8F:91:89:4A:8A:12:43:AF:F7:CA:66:EE:E5:7D:79:4A:5D:C2:19:C9:A0:92:4E:CB:C6:A2:E7:E7:A1:DC:1F"] }
+               "sha256_cert_fingerprints": ["FA:EA:5B:84:2E:4D:B6:6B:BF:8C:0C:97:67:4C:FE:9D:41:EA:4E:43:69:0B:57:20:73:6E:00:21:57:F6:63:F2"] }
 }]
