@@ -190,7 +190,7 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
     const challenge = textEncoder.encode('network_data');
     const updatedInstrument = {
       displayName: 'Max Pay',
-      icon: 'https://maxlgu.github.io/pr/spc/troy.png',
+      icon: 'https://maxlgu.github.io/pr/spc/troy-alt-logo.png',
     };
     const supportedInstruments = [{
       supportedMethods: 'secure-payment-confirmation',
