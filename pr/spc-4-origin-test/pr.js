@@ -189,8 +189,8 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
     // https://github.com/rsolomakhin/secure-payment-confirmation
     const challenge = textEncoder.encode('network_data');
     const updatedInstrument = {
-      displayName: 'Max Pay',
-      icon: 'https://maxlgu.github.io/pr/spc-4-origin-test/bobpaycc.png',
+      displayName: 'Liquan Gu Pay',
+      icon: 'https://spc.liquangu.com/bobpaycc.png',
     };
     const supportedInstruments = [{
       supportedMethods: 'secure-payment-confirmation',
@@ -202,7 +202,6 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
         networkData: challenge,
         challenge,
         timeout: 60000,
-        fallbackUrl: 'https://maxlgu.github.io/pr/spc-4-origin-test/fallback'
       },
     }];
     const details = {
