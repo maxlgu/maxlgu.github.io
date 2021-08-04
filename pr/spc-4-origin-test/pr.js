@@ -1,4 +1,4 @@
-/* exported createPaymentCredential */
+
 /* exported onBuyClicked */
 const textEncoder = new TextEncoder();
 /**
@@ -132,48 +132,6 @@ function objectToDictionary(input) {
  */
 function objectToString(input) {
   return JSON.stringify(objectToDictionary(input), undefined, 2);
-}
-/**
- * Creates a payment credential.
- */
-async function createPaymentCredential(windowLocalStorageIdentifier) {
-  const rp = {
-    id: "spc.liquangu.com",
-    name: 'Liquan Pay',
-  };
-  const pubKeyCredParams = [{
-    type: 'public-key',
-    alg: -7, // ECDSA, not supported on Windows.
-  }, {
-    type: 'public-key',
-    alg: -257, // RSA, supported on Windows.
-  }];
-  const authenticatorSelection = {
-    userVerification: 'required',
-  };
-  const instrument = {
-    displayName: 'Liquan (Max) Pay',
-    icon: 'https://spc.liquangu.com/troy.png',
-  };
-  const payment = {
-    rp,
-    instrument,
-    challenge: textEncoder.encode('Enrollment challenge'),
-    pubKeyCredParams,
-    authenticatorSelection,
-  };
-  try {
-    const publicKeyCredential = await navigator.credentials.create({
-      payment
-    });
-    console.log(publicKeyCredential);
-    window.localStorage.setItem(windowLocalStorageIdentifier,
-      arrayBufferToBase64(publicKeyCredential.rawId));
-    info(windowLocalStorageIdentifier + ' enrolled: ' + objectToString(
-      publicKeyCredential));
-  } catch (err) {
-    error(err);
-  }
 }
 /**
  * Initializes the payment request object.

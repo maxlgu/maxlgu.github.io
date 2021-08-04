@@ -29,14 +29,9 @@
   <div id="contents">
     <h1>Secure Payment Confirmation</h1>
     <p>This is a test website. Nothing is charged.</p>
-    <p><button class="button" onclick="createPaymentCredential('id0')">Enroll Credential #1</button></p>
-    <p><button class="button" onclick="createPaymentCredential('id1')">Enroll Credential #2</button></p>
     <p><button class="button" onclick="onBuyClicked('id0')">Pay $0.01</button> (with credential #1)</p>
-    <p><button class="button" onclick="onBuyClicked('id1')">Pay $0.01</button> (with credential #2)</p>
     <p><button onclick="webAuthnGet('Credential #1')">Login</button> (with
       credential #1)</button></p>
-    <p><button onclick="webAuthnGet('Credential #2')">Login</button> (with
-      credential #2)</button></p>
     <p><button class="button" onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
     <p><button class="button" onclick="changeWindowIn10s()">Change window in 10s</button></p>
     <p><button class="button" onclick="openFullscreen()">Open full screen</button></p>
