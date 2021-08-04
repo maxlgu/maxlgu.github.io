@@ -138,8 +138,8 @@ function objectToString(input) {
  */
 async function createPaymentCredential(windowLocalStorageIdentifier) {
   const rp = {
-    id: "github.io",
-    name: 'Github Pay',
+    id: "spc.liquangu.com",
+    name: 'Liquan Pay',
   };
   const pubKeyCredParams = [{
     type: 'public-key',
@@ -152,8 +152,8 @@ async function createPaymentCredential(windowLocalStorageIdentifier) {
     userVerification: 'required',
   };
   const instrument = {
-    displayName: 'Max Pay',
-    icon: 'https://maxlgu.github.io/pr/spc-4-origin-test/troy.png',
+    displayName: 'Liquan (Max) Pay',
+    icon: 'https://spc.liquangu.com/troy.png',
   };
   const payment = {
     rp,
