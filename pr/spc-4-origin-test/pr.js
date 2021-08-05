@@ -137,7 +137,7 @@ function objectToString(input) {
  * Initializes the payment request object.
  * @return {PaymentRequest} The payment request object.
  */
-async function buildPaymentRequest(windowLocalStorageIdentifier) {
+async function buildPaymentRequest() {
   if (!window.PaymentRequest) {
     return null;
   }
@@ -150,12 +150,17 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
       displayName: 'Liquan Gu Pay',
       icon: 'https://spc.liquangu.com/bobpaycc.png',
     };
+    const credential = document.getElementById('credential').value;
+    if (!credential) {
+      error("Enter the credential ID from enrolment.");
+      return null;
+    }
+    let convertedCredentialId = btoa(String.fromCharCode(...new Uint8Array(credential)));
     const supportedInstruments = [{
       supportedMethods: 'secure-payment-confirmation',
       data: {
         action: 'authenticate',
-        credentialIds: [base64ToArray(window.localStorage.getItem(
-          windowLocalStorageIdentifier))],
+        credentialIds: [base64ToArray(credentialId)],
         instrument: updatedInstrument,
         networkData: challenge,
         challenge,
@@ -180,30 +185,31 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
 /**
  * Launches payment request for Android Pay.
  */
-async function onBuyClicked(windowLocalStorageIdentifier) {
+async function onBuyClicked() {
   if (!window.PaymentRequest) {
     error('PaymentRequest API is not supported.');
     return;
   }
-  const request = await buildPaymentRequest(windowLocalStorageIdentifier);
+  const request = await buildPaymentRequest();
   if (!request) return;
   try {
     const instrumentResponse = await request.show();
     await instrumentResponse.complete('success')
     console.log(instrumentResponse);
-    info(windowLocalStorageIdentifier + ' payment response: ' +
+    info('WebAuthn payment response: ' +
       objectToString(instrumentResponse));
   } catch (err) {
     error(err);
   }
 }
-async function checkCanMakePayment(windowLocalStorageIdentifier) {
+
+async function checkCanMakePayment() {
   if (!window.PaymentRequest) {
     error('PaymentRequest API is not supported.');
     return;
   }
   try {
-    const request = await buildPaymentRequest(windowLocalStorageIdentifier);
+    const request = await buildPaymentRequest();
     if (!request) return;
     const result = await request.canMakePayment();
     info((result ? 'Can make payment.' : 'Cannot make payment'));

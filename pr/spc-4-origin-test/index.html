@@ -29,14 +29,15 @@
   <div id="contents">
     <h1>Secure Payment Confirmation</h1>
     <p>This is a test website. Nothing is charged. Payment credential enrollment: <a href="https://spc.liquangu.com">https://spc.liquangu.com</a>.</p>
-    <p><button class="button" onclick="onBuyClicked('id0')">Pay $0.01</button> (with credential #1)</p>
-    <p><button onclick="webAuthnGet('Credential #1')">Login</button> (with
+    <p>Credential id: <input type="text" id="credential"></p>
+    <p><button class="button" onclick="onBuyClicked()">Pay $0.01</button> (with credential #1)</p>
+    <p><button onclick="webAuthnGet()">Login</button> (with
       credential #1)</button></p>
     <p><button class="button" onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
     <p><button class="button" onclick="changeWindowIn10s()">Change window in 10s</button></p>
     <p><button class="button" onclick="openFullscreen()">Open full screen</button></p>
     <p><button class="button" onclick="closeFullscreen()">Close full screen</button></p>
-    <p>Iframe with allow="payment"</p>
+    <p>Iframe with allow="payment":</p>
     <iframe allow="payment" width="600" height="600" src="https://spc-4-origin-test.glitch.me"></iframe>
   </div>
   <pre id="msg"></pre>
@@ -46,10 +47,6 @@
   <script src="../util.js"></script>
   <script src="pr.js"></script>
   <script src="/redirect.js"></script>
-  <script>
-    checkCanMakePayment('id0');
-    checkCanMakePayment('id1');
-  </script>
 </body>
 
 </html>
