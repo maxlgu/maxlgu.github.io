@@ -161,7 +161,7 @@ async function buildPaymentRequest() {
       supportedMethods: 'secure-payment-confirmation',
       data: {
         action: 'authenticate',
-        credentialIds: [base64ToArray(credentialId)],
+        credentialIds: [base64ToArray(convertedCredentialId)],
         instrument: updatedInstrument,
         networkData: challenge,
         challenge,
