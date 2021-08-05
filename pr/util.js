@@ -24,8 +24,8 @@ function error(msg) {  // eslint-disable-line no-unused-vars
     timeoutID2 = window.setTimeout(function() {
       element.innerHTML = '';
       element.className = '';
-    }, 500);
-  }, 10000);
+    }, 5000);
+  }, 100000);
 }
 
 /**
