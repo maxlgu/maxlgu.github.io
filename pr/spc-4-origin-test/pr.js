@@ -156,7 +156,7 @@ async function buildPaymentRequest() {
       return null;
     }
     let convertedCredentialId = btoa(String.fromCharCode(...new Uint8Array(arrayBufferToBase64(credential))));
-    log(convertedCredentialId);
+    info(convertedCredentialId);
     const supportedInstruments = [{
       supportedMethods: 'secure-payment-confirmation',
       data: {
