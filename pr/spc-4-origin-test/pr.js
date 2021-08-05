@@ -155,7 +155,7 @@ async function buildPaymentRequest() {
       error("Enter the credential ID from enrolment.");
       return null;
     }
-    let convertedCredentialId = btoa(String.fromCharCode(...new Uint8Array(arrayBufferToBase64(credential))));
+    let convertedCredentialId = credential;
     info(convertedCredentialId);
     const supportedInstruments = [{
       supportedMethods: 'secure-payment-confirmation',
