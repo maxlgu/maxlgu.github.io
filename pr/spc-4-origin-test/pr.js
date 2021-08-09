@@ -197,7 +197,7 @@ async function onBuyClicked() {
     const instrumentResponse = await request.show();
     await instrumentResponse.complete('success')
     console.log(instrumentResponse);
-    info('WebAuthn payment response: ' +
+    info('payment response: ' +
       objectToString(instrumentResponse));
   } catch (err) {
     error(err);
