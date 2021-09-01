@@ -165,6 +165,7 @@ async function buildPaymentRequest() {
         instrument: updatedInstrument,
         networkData: challenge,
         challenge,
+        payeeOrigin: window.location.origin,
         timeout: 60000,
       },
     }];

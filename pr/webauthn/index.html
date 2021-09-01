@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAuthn Test PublicKeyCredential.isUVPAA()</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<style>
+.button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+</style>
+<body>
+  <div id="contents">
+    <h1>Test PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()</h1>
+    <p><button class="button" onclick="isUVPAAs()">multiple isUVPAAs</button></p>
+  </div>
+  <pre id="msg"></pre>
+  <script src="../util.js"></script>
+  <script src="pr.js"></script>
+  <script src="/redirect.js"></script>
+  <script>
+    isUVPAA();
+    isUVPAA();
+  </script>
+</body>
+
+</html>

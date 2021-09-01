@@ -225,6 +225,7 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
   }
   return request;
 }
+
 /**
  * Launches payment request for Android Pay.
  */
