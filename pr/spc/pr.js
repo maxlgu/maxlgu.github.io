@@ -206,6 +206,7 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
         networkData: challenge,
         challenge,
         timeout: 60000,
+        payeeOrigin: window.location.origin,
         fallbackUrl: 'https://maxlgu.github.io/pr/spc/fallback'
       },
     }];
