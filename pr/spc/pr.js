@@ -254,12 +254,20 @@ async function checkCanMakePayment(windowLocalStorageIdentifier) {
   try {
     const request = await buildPaymentRequest(windowLocalStorageIdentifier);
     if (!request) return;
+    isUVPAA(windowLocalStorageIdentifier);
     const result = await request.canMakePayment();
+    isUVPAA(windowLocalStorageIdentifier);
     info(windowLocalStorageIdentifier+ ': ' +(result ? 'Can make payment.' : 'Cannot make payment'));
   } catch (err) {
     error(err);
   }
 }
+
+async function isUVPAA(id) {
+    const result = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+    info(id+': isUVPAA=' + result);
+}
+
 async function webAuthnGet(windowLocalStorageIdentifier) {
   try {
     const publicKey = {
