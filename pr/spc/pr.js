@@ -255,7 +255,7 @@ async function checkCanMakePayment(windowLocalStorageIdentifier) {
     const request = await buildPaymentRequest(windowLocalStorageIdentifier);
     if (!request) return;
     const result = await request.canMakePayment();
-    info((result ? 'Can make payment.' : 'Cannot make payment'));
+    info(windowLocalStorageIdentifier+ ': ' +(result ? 'Can make payment.' : 'Cannot make payment'));
   } catch (err) {
     error(err);
   }
