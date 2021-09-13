@@ -49,7 +49,7 @@ function handlePaymentResponse(response) {
  * Launches payment request for Max Pay.
  */
 function onMaxPayClicked() { // eslint-disable-line no-unused-vars
-  onPayClicked("https://skilful-reserve-239412.appspot.com/method-manifest");
+  onPayClicked("https://liquangumax.github.io/payment-method.json");
 }
 
 /**

@@ -25,7 +25,7 @@ async function checkHasEnrolledInstrument(request) {
 }
 
 const supportedInstruments = [{
-  supportedMethods: 'https://skilful-reserve-239412.appspot.com/static/apps/pmc',
+  supportedMethods: 'https://liquangumax.github.io/apps/pmc',
 }];
 
 const details = {
