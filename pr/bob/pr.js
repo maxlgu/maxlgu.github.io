@@ -8,7 +8,7 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://liquangumax.github.io/payment-method.json'
+    supportedMethods: 'https://liquangumax.github.io/payment-manifest.json'
   }
   ];
 
