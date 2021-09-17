@@ -181,3 +181,14 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
+
+let options = {
+  types: ['deprecation'],
+  buffered: true
+}
+
+let observer = new ReportingObserver(function(reports, observer) {
+  error("Received deprecation report:" + reports);
+}, options);
+
+observer.observe();
