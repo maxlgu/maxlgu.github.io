@@ -63,13 +63,13 @@ function buildPayRequest(method) {
  * Handles the response from PaymentRequest.show().
  */
 function handlePaymentResponse(response) {
-    response.complete('success')
-      .then(function() {
-        done('This is a demo website. No payment will be processed.', response);
-      })
-      .catch(function(err) {
-        error(err);
-      });
+  response.complete('success')
+    .then(function() {
+      done('This is a demo website. No payment will be processed.', response);
+    })
+    .catch(function(err) {
+      error(err);
+    });
 }
 
 /**
