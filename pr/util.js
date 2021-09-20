@@ -148,13 +148,13 @@ function changeWindowIn10s() {
   }, 10000);
 }
 
-let options = {
+let reportingOptions = {
   types: ['deprecation'],
   buffered: true
 }
 
-let observer = new ReportingObserver(function(reports, observer) {
+let reportingObserver = new ReportingObserver(function(reports, observer) {
   info(reports);
-}, options);
+}, reportingOptions);
 
-observer.observe();
+reportingObserver.observe();
