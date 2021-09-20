@@ -154,7 +154,7 @@ let reportingOptions = {
 }
 
 let reportingObserver = new ReportingObserver(function(reports, observer) {
-  info(reports);
+  info(JSON.stringify(reports));
 }, reportingOptions);
 
 reportingObserver.observe();
