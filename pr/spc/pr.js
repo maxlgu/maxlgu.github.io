@@ -290,3 +290,14 @@ async function webAuthnGet(windowLocalStorageIdentifier) {
     error(err);
   }
 }
+
+let options = {
+  types: ['deprecation'],
+  buffered: true
+}
+
+let observer = new ReportingObserver(function(reports, observer) {
+  info(reports);
+}, options);
+
+observer.observe();
