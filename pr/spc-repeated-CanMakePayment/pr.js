@@ -242,9 +242,8 @@ async function checkCanMakePayment(windowLocalStorageIdentifier) {
 }
 
 async function repeatedCheckCanMakePayment() {
-  let i = 1;
-  while (true) {
+  for (let i=0;i<1000;i++) {
+    console.log("iteration "+i);
     checkCanMakePayment('' + i);
-    i++;
   }
 }
