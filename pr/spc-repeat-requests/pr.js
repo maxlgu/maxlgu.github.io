@@ -58,15 +58,15 @@ async function buildPaymentRequest(windowLocalStorageIdentifier) {
 
 async function repeatCreatingSpcRequests() {
   reloadIn1s();
-  for (let i=0;i<1000;i++) {
+  for (let i=0;i<100;i++) {
     console.log("iteration "+i);
     await buildPaymentRequest("id#"+i);
   }
 }
 
 function reloadIn1s() {
-  info("Reload in 1s.");
+  info("Reload in 2s.");
   setTimeout(() => {
     window.location.reload();
-  }, 1000);
+  }, 2000);
 }

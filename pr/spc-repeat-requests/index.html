@@ -30,7 +30,7 @@
     <h1>Secure Payment Confirmation</h1>
     <p>This is a test website. Nothing is charged. Upon being loaded, this page will create 1000 payment requests. It will take a while to finish and print all of the results. During the process, testers can try to refresh the page. This will help catch any bug arised from ending navigation in the process of the IsUVPAA checking internally. A potential bug that https://crrev.com/c/3194651 may create.</p>
     <p><button class="button" onclick="createPaymentCredential('Credential #1')">Enroll Credential #1</button></p>
-    <p><button class="button" onclick="repeatedCheckCanMakePayment()">Repeat CanMakePayment</button></p>
+    <p><button class="button" onclick="repeatCreatingSpcRequests()">Repeat CanMakePayment</button></p>
   </div>
   <pre id="msg"></pre>
   <p><em>Enroll Credential</em> will make the following request:
