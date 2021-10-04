@@ -28,7 +28,7 @@
 <body>
   <div id="contents">
     <h1>Secure Payment Confirmation</h1>
-    <p>This is a test website. Nothing is charged. By clicking the `repeatedCheckCanMakePayment` button, this page will send 1000 CanMakePayment requests. It will take a while to finish and print all of the results. During the process, testers can try to refresh the page. This will help catch any bug arised from ending navigation in the process of IsUVPAA checking. A potential bug that https://chromium-review.googlesource.com/c/chromium/src/+/3194651 may create.</p>
+    <p>This is a test website. Nothing is charged. By clicking the `repeatedCheckCanMakePayment` button, this page will send 1000 CanMakePayment requests. It will take a while to finish and print all of the results. During the process, testers can try to refresh the page. This will help catch any bug arised from ending navigation in the process of the IsUVPAA checking internally. A potential bug that https://chromium-review.googlesource.com/c/chromium/src/+/3194651 may create.</p>
     <p><button class="button" onclick="createPaymentCredential('Credential #1')">Enroll Credential #1</button></p>
     <p><button class="button" onclick="repeatedCheckCanMakePayment()">Repeat CanMakePayment</button></p>
     <p><button class="button" onclick="onBuyClicked('Credential #1')">Pay $0.01</button> (with credential #1)</p>
