@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+     - Origin trial for secure payment confirmation:
+     - https://developers.chrome.com/origintrials/#/view_trial/42784196460019713
+     -->
+  <meta http-equiv="origin-trial"
+  content="AkKpB/4exvtr9GW67VvVRQZuQ3Anskq54rg+1vMZXZhALTF+V6FKkChRmpoplG9H5lMPHWSlD+xMEYuDpZrNJAQAAABleyJvcmlnaW4iOiJodHRwczovL21heGxndS5naXRodWIuaW86NDQzIiwiZmVhdHVyZSI6IlNlY3VyZVBheW1lbnRDb25maXJtYXRpb25WMiIsImV4cGlyeSI6MTYzMTY2Mzk5OX0=">
+
+  <title>Secure Payment Confirmation</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<style>
+.button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+</style>
+<body>
+  <div id="contents">
+    <h1>Secure Payment Confirmation</h1>
+    <p>This is a test website. Nothing is charged.</p>
+    <p><button class="button" onclick="createPaymentCredential('Credential #1')">Enroll Credential #1</button></p>
+    <p><button class="button" onclick="repeatedCheckCanMakePayment()">Repeat CanMakePayment</button></p>
+    <p><button class="button" onclick="onBuyClicked('Credential #1')">Pay $0.01</button> (with credential #1)</p>
+    <p><button onclick="webAuthnGet('Credential #1')">Login</button> (with
+      credential #1)</button></p>
+    <p><button class="button" onclick="navigateAwayIn10s()">Navigate away in 10s</button></p>
+    <p><button class="button" onclick="changeWindowIn10s()">Change window in 10s</button></p>
+    <p><button class="button" onclick="openFullscreen()">Open full screen</button></p>
+    <p><button class="button" onclick="closeFullscreen()">Close full screen</button></p>
+  </div>
+  <pre id="msg"></pre>
+  <p><em>Enroll Credential</em> will make the following request:
+  <pre style="color: #265289">const instrument = {
+  displayName: 'Troy ····',
+  icon: 'https://rsolomakhin.github.io/pr/spc/troy.png',
+};
+const rp = {
+  id: 'maxlgu.github.io',
+  name: 'Max Pay',
+};
+const pubKeyCredParams = [{
+  type: 'public-key',
+  alg: -7,  // ECDSA, not supported on Windows.
+}, {
+  type: 'public-key',
+  alg: -257,  // RSA, supported on Windows.
+}];
+const payment = {
+  rp,
+  instrument,
+  challenge: textEncoder.encode('Enrollment challenge'),
+  pubKeyCredParams,
+};
+const publicKeyCredential = await navigator.credentials.create({payment});
+window.localStorage.setItem(
+    'credential_identifier',
+    btoa(String.fromCharCode(...new Uint8Array(
+        publicKeyCredential.rawId))));</pre>
+  </p>
+  <p><em>Pay $0.01</em> will make the following request:
+  <pre style="color: #265289">new PaymentRequest([{
+  supportedMethods: 'secure-payment-confirmation',
+  data: {
+    action: 'authenticate',
+    credentialIds: [Uint8Array.from(
+        atob(window.localStorage.getItem('credential_identifier')),
+        c => c.charCodeAt(0))],
+    instrument,
+    networkData: textEncoder.encode('network_data'),
+    challenge: textEncoder.encode('network_data'),
+    timeout: 60000,
+    fallbackUrl: 'https://rsolomakhin.github.io/pr/spc/fallback'
+  },
+}], {
+  total: {
+    label: 'Total',
+    amount: {
+      currency: 'USD',
+      value: '0.01',
+    },
+  },
+});</pre>
+  <p>Based on the <a
+  href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure
+  Payment Confirmation explainer</a>.</p>
+  <script src="../util.js"></script>
+  <script src="pr.js"></script>
+  <script src="/redirect.js"></script>
+</body>
+
+</html>
