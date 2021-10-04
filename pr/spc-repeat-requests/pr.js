@@ -65,8 +65,8 @@ async function repeatCreatingSpcRequests() {
 }
 
 function reloadIn1s() {
-  info("Reload in 5s.");
+  info("Reload in 2s.");
   setTimeout(() => {
     window.location.reload();
-  }, 5000);
+  }, 2000);
 }
