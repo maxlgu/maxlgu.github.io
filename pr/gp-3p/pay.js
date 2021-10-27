@@ -1817,7 +1817,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
         e.appendChild(c);
         sc(e);
         d.appendChild(e);
-        var l = document.createElement("iframe");
+        var l = document.createElement("fencedframe");
         l.setAttribute("class", "gpay-card-info-iframe");
         l.setAttribute("scrolling", "no");
         b = new J("https://pay.google.com/gp/p/generate_gpay_btn_img");
