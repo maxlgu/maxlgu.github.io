@@ -1817,7 +1817,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
         e.appendChild(c);
         sc(e);
         d.appendChild(e);
-        var l = document.createElement("fencedframe");
+        var l = document.createElement("iframe");
         l.setAttribute("class", "gpay-card-info-iframe");
         l.setAttribute("scrolling", "no");
         b = new J("https://pay.google.com/gp/p/generate_gpay_btn_img");
@@ -1957,7 +1957,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
         if (!N) {
             var a = window.gpayInitParams || {};
             O = a.environment || "PRODUCTION";
-            N = document.createElement("fencedframe");
+            N = document.createElement("iframe");
             vc(N, vb(D(("CANARY" == O ? "https://ibfe-canary.corp" : "https://pay") + ("PREPROD" == O ? "-preprod.sandbox" : "SANDBOX" == O ? ".sandbox" : "") + ".google.com/gp/p/ui/payframe?origin=%{windowOrigin}&mid=%{merchantId}"), {
                 windowOrigin: window.location.origin,
                 merchantId: a.merchantInfo && a.merchantInfo.merchantId || ""
@@ -3435,7 +3435,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
             c.classList.add("google-payments-dialogContainer");
             var d = document.createElement("div");
             d.classList.add("iframeContainer");
-            var e = document.createElement("fencedframe");
+            var e = document.createElement("iframe");
             e.classList.add(b);
             e.setAttribute("frameborder", "0");
             e.setAttribute("scrolling", "no");
