@@ -1957,7 +1957,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
         if (!N) {
             var a = window.gpayInitParams || {};
             O = a.environment || "PRODUCTION";
-            N = document.createElement("iframe");
+            N = document.createElement("fencedframe");
             vc(N, vb(D(("CANARY" == O ? "https://ibfe-canary.corp" : "https://pay") + ("PREPROD" == O ? "-preprod.sandbox" : "SANDBOX" == O ? ".sandbox" : "") + ".google.com/gp/p/ui/payframe?origin=%{windowOrigin}&mid=%{merchantId}"), {
                 windowOrigin: window.location.origin,
                 merchantId: a.merchantInfo && a.merchantInfo.merchantId || ""
@@ -3435,7 +3435,7 @@ for (var d; b.length && (d = b.shift());) b.length ? c = c[d] && c[d] !== Object
             c.classList.add("google-payments-dialogContainer");
             var d = document.createElement("div");
             d.classList.add("iframeContainer");
-            var e = document.createElement("iframe");
+            var e = document.createElement("fencedframe");
             e.classList.add(b);
             e.setAttribute("frameborder", "0");
             e.setAttribute("scrolling", "no");
