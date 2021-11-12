@@ -107,6 +107,6 @@ function runTwice() {
   const payment2 = new PaymentRequest(supportedInstruments, details);
   payment1.show();
   payment2.show().catch(function(error) {
-    print('Second request: ' + error);
+    error('Second request: ' + error);
   });
 }
