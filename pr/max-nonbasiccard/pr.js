@@ -97,3 +97,16 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
+
+function runTwice() {
+  const supportedInstruments = [{
+    supportedMethods: ['https://liquangumax.github.io/payment-manifest.json']
+  }];
+  const details = {total: {label: 'Total', amount: {currency: 'USD', value: '5.00'}}};
+  const payment1 = new PaymentRequest(supportedInstruments, details);
+  const payment2 = new PaymentRequest(supportedInstruments, details);
+  payment1.show();
+  payment2.show().catch(function(error) {
+    print('Second request: ' + error);
+  });
+}
