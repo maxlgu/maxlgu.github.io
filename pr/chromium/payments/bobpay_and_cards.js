@@ -61,7 +61,7 @@ function testPaymentMethods(methods, requestShippingContact = false) {
  */
 function buy() { // eslint-disable-line no-unused-vars
   testPaymentMethods([
-      {supportedMethods: 'https://bobpay.com'},
+      {supportedMethods: 'https://bobbucks.dev'},
       {
         supportedMethods: 'basic-card',
         data: {supportedNetworks: ['visa', 'mastercard']},

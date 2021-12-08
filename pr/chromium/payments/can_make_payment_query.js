@@ -7,7 +7,7 @@
 /* global PaymentRequest:false */
 /* global print:false */
 
-const bobPayMethod = {supportedMethods: 'https://bobpay.com'};
+const bobPayMethod = {supportedMethods: 'https://bobbucks.dev'};
 
 const visaMethod = {
   supportedMethods: 'basic-card',

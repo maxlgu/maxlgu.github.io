@@ -15,7 +15,7 @@ function buy() { // eslint-disable-line no-unused-vars
     new PaymentRequest(
         [
           {supportedMethods: 'https://alicepay.com'},
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'https://charliepay.com'}, {
             supportedMethods: 'basic-card',
             data: {supportedNetworks: ['visa', 'mastercard']},

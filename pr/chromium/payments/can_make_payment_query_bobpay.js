@@ -18,7 +18,7 @@ const defaultDetails = {
 };
 
 const bobPayMethod = {
-  supportedMethods: 'https://bobpay.com',
+  supportedMethods: 'https://bobbucks.dev',
   data: {
     'bobPayParameter': '1',
   },

@@ -13,7 +13,7 @@
  */
 var REQUEST = new PaymentRequest(
     [
-      {supportedMethods: 'https://bobpay.com'},
+      {supportedMethods: 'https://bobbucks.dev'},
       {supportedMethods: 'basic-card', data: {supportedMethods: ['visa']}},
     ],
     {total: {label: 'Total', amount: {currency: 'USD', value: '5.00'}}});

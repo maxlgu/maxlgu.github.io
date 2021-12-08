@@ -14,7 +14,7 @@
 function buildPaymentRequest() {
   return new PaymentRequest(
       [
-        {supportedMethods: 'https://bobpay.com'},
+        {supportedMethods: 'https://bobbucks.dev'},
         {supportedMethods: 'https://alicepay.com'},
       ],
       {total: {label: 'Total', amount: {currency: 'USD', value: '5.00'}}});

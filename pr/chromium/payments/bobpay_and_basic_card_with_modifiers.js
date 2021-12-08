@@ -14,7 +14,7 @@ function buy() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {
@@ -58,13 +58,13 @@ function buyWithBobPayDiscount() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {
           total: {label: 'Total', amount: {currency: 'USD', value: '5.00'}},
           modifiers: [{
-            supportedMethods: 'https://bobpay.com',
+            supportedMethods: 'https://bobbucks.dev',
             total: {
               label: 'Total',
               amount: {currency: 'USD', value: '4.00'},
@@ -102,7 +102,7 @@ function visaSupportedNetwork() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {
@@ -149,7 +149,7 @@ function mastercardSupportedNetwork() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {
@@ -196,7 +196,7 @@ function mastercardAnySupportedType() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {

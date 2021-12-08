@@ -11,7 +11,7 @@
  */
 function initPaymentRequest() {
   var supportedInstruments = [{
-    supportedMethods: 'https://bobpay.com',
+    supportedMethods: 'https://bobbucks.dev',
   }];
 
   var details = {

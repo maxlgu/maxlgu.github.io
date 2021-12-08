@@ -212,7 +212,7 @@ function cardsAndBobPayBuy() { // eslint-disable-line no-unused-vars
         [
           {supportedMethods: 'basic-card', data: {supportedNetworks: ['visa']}},
           {
-            supportedMethods: 'https://bobpay.com',
+            supportedMethods: 'https://bobbucks.dev',
           },
         ],
         {
@@ -263,7 +263,7 @@ function contactInfoBuy() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {
             supportedMethods: 'basic-card',
             data: {supportedNetworks: ['amex', 'visa']},

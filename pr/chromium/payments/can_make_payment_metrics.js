@@ -11,7 +11,7 @@
 var request;
 
 const bobPayMethod = Object.freeze({
-  supportedMethods: 'https://bobpay.com',
+  supportedMethods: 'https://bobbucks.dev',
 });
 
 const visaMethod = Object.freeze({

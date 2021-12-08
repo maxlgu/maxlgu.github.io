@@ -27,7 +27,7 @@ function buy() { // eslint-disable-line no-unused-vars
             supportedMethods: 'basic-card',
             data: {supportedNetworks: ['visa']},
           },
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
         ],
         details, {
           requestPayerName: true,

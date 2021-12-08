@@ -12,13 +12,13 @@ function buy() { // eslint-disable-line no-unused-vars
   try {
     new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {supportedMethods: 'basic-card'},
         ],
         {
           total: {label: 'Total', amount: {currency: 'USD', value: '5.00'}},
           modifiers: [{
-            supportedMethods: 'https://bobpay.com',
+            supportedMethods: 'https://bobbucks.dev',
             total: {
               label: 'Total',
               amount: {currency: 'USD', value: '4.00'},
@@ -146,7 +146,7 @@ function paymentRequestWithOptions(options) { // eslint-disable-line no-unused-v
   try {
     const request = new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.xyz'},
+          {supportedMethods: 'https://bobbucks.dev/pay'},
           {supportedMethods: 'basic-card'},
         ],
         {

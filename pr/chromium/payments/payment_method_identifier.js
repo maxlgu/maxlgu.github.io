@@ -34,7 +34,7 @@ const alicePayMethod = { // eslint-disable-line no-unused-vars
 };
 
 const bobPayMethod = { // eslint-disable-line no-unused-vars
-  supportedMethods: 'https://bobpay.com/webpay',
+  supportedMethods: 'https://bobbucks.dev/webpay',
 };
 
 const defaultDetails = {

@@ -16,7 +16,7 @@ function buy() { // eslint-disable-line no-unused-vars
   try {
     request = new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {
             supportedMethods: 'basic-card',
             data: {supportedNetworks: ['visa']},
@@ -71,7 +71,7 @@ function showSecondRequest() { // eslint-disable-line no-unused-vars
   try {
     request2 = new PaymentRequest(
         [
-          {supportedMethods: 'https://bobpay.com'},
+          {supportedMethods: 'https://bobbucks.dev'},
           {
             supportedMethods: 'basic-card',
             data: {supportedNetworks: ['visa']},
