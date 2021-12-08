@@ -1,0 +1,4 @@
+{
+    "default_applications": ["bobbucks/app.json", "https://bobbucks.dev/pay"],
+    "supported_origins": ["https://bobbucks.dev"]
+}
