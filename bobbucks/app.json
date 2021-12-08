@@ -1,0 +1,11 @@
+{
+  "related_applications": [{
+    "platform": "play",
+    "id": "dev.bobbucks",
+    "min_version": "1",
+    "fingerprints": [{
+      "type": "sha256_cert",
+      "value": "78:58:31:7E:0A:CE:53:4E:9B:47:52:DE:A7:D3:E9:B0:22:2D:04:D1:61:64:DC:8A:2D:68:1F:FE:F3:3A:B1:1B"
+    }]
+  }]
+}
