@@ -8,7 +8,7 @@ function buildPaymentRequest() {
   }
 
   const supportedInstruments = [{
-    supportedMethods: 'https://maxlgu.github.io/bobbucks/app.json'
+    supportedMethods: 'https://maxlgu.github.io/bobbucks/manifest.json'
   }
   ];
 
