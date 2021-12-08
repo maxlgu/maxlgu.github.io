@@ -1,4 +1,4 @@
 {
     "default_applications": ["bobbucks/app.json"],
-    "supported_origins": ["https://bobbucks.dev"]
+    "supported_origins": ["https://maxlgu.github.io", "https://bobbucks.dev"]
 }
