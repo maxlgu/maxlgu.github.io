@@ -18,6 +18,7 @@
     <div id="container"></div>
     <p><button onclick="openFullscreen()">Open full screen</button></p>
     <p><button onclick="closeFullscreen()">Close full screen</button></p>
+    <p><button onclick="addIframe()">Add iframe</button></p>
   </div>
   <pre id="msg"></pre>
   <p>Based on the <a
@@ -468,6 +469,12 @@
           resolve({});
         }, 3000);
       });
+    }
+
+    function addIframe() {
+        var iframe = document.createElement('iframe');
+        iframe.src = "https://liquangumax.github.io/pr/gp-du";
+        document.body.appendChild(iframe);
     }
   </script>
 </body>
