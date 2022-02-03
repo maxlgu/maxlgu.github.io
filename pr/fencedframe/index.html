@@ -13,10 +13,12 @@
     <div>
         <h1>Fenced Frame examples:</h1>
         <h2>Fenced Frame #1</h2>
-        <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"></fencedframe>
+        <button onclick='loginGPay()'>
+            <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"/>
+        </button>
         <p>Html source code:</p>
         <pre>
-            &ltfencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/"&gt&lt/fencedframe&gt
+            &ltfencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"&gt&lt/fencedframe&gt
         </pre>
         <h2>Fenced Frame #2</h2>
         <fencedframe src="https://mparch.glitch.me/cookie.html"></fencedframe>
@@ -36,3 +38,9 @@
         </pre>
     </div>
 </body>
+
+<script type="text/javascript">
+    function loginGPay() {
+        window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html','GPay login','width=600,height=300')
+    }
+</script>
