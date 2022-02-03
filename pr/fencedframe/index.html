@@ -8,12 +8,21 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+<style type="text/css">
+    #gpayButton {
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;  
+    }
+</style>
 
 <body>
     <div>
         <h1>Fenced Frame examples:</h1>
         <h2>Fenced Frame #1</h2>
-        <button onclick='loginGPay()'>
+        <button onclick='loginGPay()' id='gpayButton'>
             <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"/>
         </button>
         <p>Html source code:</p>
