@@ -19,10 +19,7 @@
 
 #placeholder {
     display: flex;
-    width: "100%";
     position: absolute;
-    z-index: 100;
-    height: "40px";
 }
 
 </style>
@@ -31,8 +28,8 @@
     <div>
         <h1>Fenced Frame examples:</h1>
         <h2>Fenced Frame #1</h2>
-        <button onclick='loginGPay()' id='gpayButton'>
-            <div id='placeholder'></div>
+        <button id='gpayButton'>
+            <div id='placeholder' onclick='loginGPay()' style='width: 300px; z-index: 100; height: 40px'></div>
             <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"
                 style="height: 40px;"/>
         </button>
@@ -61,6 +58,20 @@
 
 <script type="text/javascript">
     function loginGPay() {
-        window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html','GPay login','width=600,height=300')
+        window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html',
+            'GPay login','width=600,height=300');
     }
+
+    function movePlaceHolder() {
+        const gpayButton = document.getElementById('gpayButton');
+        var rect = gpayButton.getBoundingClientRect();
+        const placeholder = document.getElementById('placeholder');
+        console.log(rect.top, rect.right, rect.bottom, rect.left);
+        placeholder.style.top = rect.top;
+        placeholder.style.left = rect.left;
+    }
+
+    setInterval(()=>{
+        movePlaceHolder();
+    }, 1000);
 </script>
