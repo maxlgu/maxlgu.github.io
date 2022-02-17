@@ -27,12 +27,15 @@
 <body>
     <h1>Fenced-Frame GPay button demo:</h1>
     <div id='container'>
-        <div id='ffSupportedContainer'>
-            <button id='gpayButton'>
-                <div id='placeholder' onclick='loginGPay()' style='width: 300px; z-index: 100; height: 40px; margin-top:0'></div>
-                <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"
-                    style="height: 40px;"/>
-            </button>
+        <div>
+            <div>Fenced Frame is supported:</div>
+            <div id='ffSupportedContainer'>
+                <button id='gpayButton'>
+                    <div id='placeholder' onclick='loginGPay()' style='width: 300px; z-index: 100; height: 40px; margin-top:0'></div>
+                    <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"
+                        style="height: 40px;"/>
+                </button>
+            </div>
         </div>
         <div id='ffUnsupportedContainer' style='background-color:gray'>
             Fenced Frame is unsupported. To support this demo, please follow the instructions below.
@@ -61,7 +64,7 @@
 </body>
 
 <script type="text/javascript">
-    document.onload = ()=>{
+    document.addEventListener('load', ()=>{
         if (!window.HTMLFencedFrameElement) {
             const div = document.getElementById('ffSupportedContainer');
             div.style.display = "none";
@@ -69,7 +72,7 @@
             const div = document.getElementById('ffUnsupportedContainer');
             div.style.display = "none";
         }
-    }
+    });
 
     function loginGPay() {
         window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html',
