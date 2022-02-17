@@ -26,11 +26,24 @@
 
 <body>
     <h1>Fenced-Frame GPay button demo:</h1>
-    <button id='gpayButton'>
-        <div id='placeholder' onclick='loginGPay()' style='width: 300px; z-index: 100; height: 40px; margin-top:0'></div>
-        <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"
-            style="height: 40px;"/>
-    </button>
+    <div id='container'>
+        <div id='ffSupportedContainer'>
+            <button id='gpayButton'>
+                <div id='placeholder' onclick='loginGPay()' style='width: 300px; z-index: 100; height: 40px; margin-top:0'></div>
+                <fencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"
+                    style="height: 40px;"/>
+            </button>
+        </div>
+        <div id='ffUnsupportedContainer' style='background-color:gray'>
+            Fenced Frame is unsupported. To support this demon, please take the following steps:
+            <ul>
+                <li>Ensure https://crrev.com/c/3421626 is merged or patched to your Chrome version.</li>
+                <li>Enable chrome://flags/#enable-fenced-frames with "Enable multiple page architecture"</li>
+                <li>Enable chrome://flags/#enable-fenced-frames-unpartitioned-cookie-access</li>
+                <li>Visit Chrome settings, block 3rd party cookie.</li>
+            </ul>
+        </div>
+    </div>
     <p>Html source code:</p>
     <p>
         &ltfencedframe src="https://maxlg-big-query-project.ue.r.appspot.com/fencedframe.html"&gt&lt/fencedframe&gt
@@ -39,6 +52,16 @@
 </body>
 
 <script type="text/javascript">
+    document.onload = ()=>{
+        if (!window.HTMLFencedFrameElement) {
+            const div = document.getElementById('ffSupportedContainer');
+            div.style.display = "none";
+        } else {
+            const div = document.getElementById('ffUnsupportedContainer');
+            div.style.display = "none";
+        }
+    }
+
     function loginGPay() {
         window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html',
             'GPay login','width=600,height=300');
