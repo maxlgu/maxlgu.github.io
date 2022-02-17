@@ -24,7 +24,7 @@
 
 </style>
 
-<body>
+<body onload='showFencedFrameStatus()'>
     <h1>Fenced-Frame GPay button demo:</h1>
     <div id='container'>
         <div>
@@ -64,7 +64,7 @@
 </body>
 
 <script type="text/javascript">
-    document.addEventListener('load', ()=>{
+    function showFencedFrameStatus() {
         if (!window.HTMLFencedFrameElement) {
             const div = document.getElementById('ffSupportedContainer');
             div.style.display = "none";
@@ -72,7 +72,7 @@
             const div = document.getElementById('ffUnsupportedContainer');
             div.style.display = "none";
         }
-    });
+    };
 
     function loginGPay() {
         window.open('https://maxlg-big-query-project.ue.r.appspot.com/login.html',
